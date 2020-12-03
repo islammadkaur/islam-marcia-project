@@ -1,0 +1,13 @@
+<h2>Enemy Index</h2>
+
+<ul>
+  <% @enemies.each do |enemy| %>
+    <li>
+      <%= enemy.name%>
+      <%= enemy.health%>
+      <%= enemy.attacks%>
+      <br>
+    </li>
+    <br>
+  <% end %>
+</ul>
