@@ -8,12 +8,12 @@ class Enemy < ApplicationRecord
     
     def initialize(health = 100)
       @health = health
-      @name = generate_name
+      @name = name
     end
 
 # 23 names
 # 68 adjectives
-    def generate_name
+    def self.generate_name
         name_array = ['Alexa', 'Arhamm', 'Bart', 'Brodrick', 'Cole', 'Dena', 
                       'Derick', 'Dom', 'Ev', 'Islam', 'Jake', 'Kyle', 'Marcia',
                       'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 'Raza', 
@@ -35,10 +35,21 @@ class Enemy < ApplicationRecord
                      'witty', 'zany', 'zealous']
 
         name = "#{name_array.sample} the #{adj_array.sample}"
-
-                     
-
     end
+
+    # needs to be changed from a self method once we figure out where we want to generate a new enemy
+    def self.create_enemy
+        enemy = Enemy.new
+        enemy.name = generate_name
+        enemy.health = 100
+
+            puts enemy.name
+            puts enemy.health
+        # enemy.attacks = Attack.sample(3)
+        # enemy.save
+    end
+
+
     
 
 end
