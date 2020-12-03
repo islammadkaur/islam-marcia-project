@@ -6,6 +6,7 @@ class CreateAttacks < ActiveRecord::Migration[6.0]
       t.string :attack_type
       t.string :target
 
+
       t.timestamps
     end
   end

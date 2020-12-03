@@ -1,0 +1,27 @@
+<%= @attack.name%><br>
+<%= @attack.attack_type%><br>
+<%= @attack.damage%><br>
+<%= link_to 'Homepage', attacks_path %><br>
+<%def img%>
+<%img = []%>
+<% if @attack.name == "Kick" %>
+<img src="https://i.gifer.com/Idqu.gif">
+<%elsif%>
+<% @attack.name == "Punch" %>
+<img src="https://i.pinimg.com/originals/1b/15/df/1b15dfc358757d3ae358ef7626cb630a.gif">
+<%elsif%>
+<% @attack.name == "Confusion" %>
+<img src="https://media4.giphy.com/media/3ohzdIhbPfLb7pWdvG/giphy.gif">
+<%elsif%>
+<% @attack.name == "Slap" %>
+<img src="https://media1.giphy.com/media/y6dyjA5vmkUgw/200.gif">
+<%elsif%>
+<% @attack.name == "Reality Check" %>
+<img src="https://media1.tenor.com/images/de046dbc4dac5bb6182390ee3fd07f07/tenor.gif?itemid=6144301">
+<%elsif%>
+<%@attack.name == "Toe Stepper" %>
+<img src="https://thumbs.gfycat.com/QualifiedFabulousBeauceron-max-1mb.gif">
+<%end%>
+<%end%>
+
+<%img%>
