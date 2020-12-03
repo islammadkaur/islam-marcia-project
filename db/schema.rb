@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_191030) do
 
   create_table "enemies", force: :cascade do |t|
     t.string "name"
-    t.integer "health", default: 100
+    t.integer "health"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_191030) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
-    t.integer "health", default: 100
+    t.integer "health"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -4,12 +4,12 @@ class Enemy < ApplicationRecord
     has_many :locations, through: :battles
     has_many :players, through: :battles
 
-    attr_accessor :name, :health
+    # attr_accessor :name, :health
     
-    def initialize(health = 100)
-      @health = health
-      @name = name
-    end
+    # def initialize(name, health = 100)
+    #     @name = name
+    #     @health = health
+    # end
 
 # 19 names
 # 68 adjectives
