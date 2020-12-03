@@ -3,7 +3,8 @@ class CreateAttacks < ActiveRecord::Migration[6.0]
     create_table :attacks do |t|
       t.string :name
       t.string :damage
-      t.string :type
+      t.string :attack_type
+      t.string :target
 
       t.timestamps
     end

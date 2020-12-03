@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2020_12_02_191030) do
   create_table "attacks", force: :cascade do |t|
     t.string "name"
     t.string "damage"
-    t.string "type"
+    t.string "attack_type"
+    t.string "target"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_191030) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "location_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Attack_Names = [name,]
+
+Attack_Type = [physical, emotional, spiritual, financial, verbal] 
+
+attack1.create(name: )
+
