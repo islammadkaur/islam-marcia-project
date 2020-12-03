@@ -1,2 +1,38 @@
-<h1>Start a new battle</h1>
-<%= button_to "New Battle", new_battle_path(@battle), method: "get"%>
+<body id="game_play">
+
+<h1>Game Title</h1>
+<br>
+<br>
+<h2 style="color: #566573">Main Menu</h2>
+
+<ul>
+    <li>
+        <h4 style="color: #5DADE2">Start a Battle 
+        <%= button_to "New Battle", new_battle_path(@battle), method: "get"%>
+        </h4>
+         
+    </li>
+    <li>
+        <h4 style="color: #5DADE2">Current Players
+        <%= button_to "Players", players_path, method: "get"%>
+        </h4>
+         
+    </li>
+    <li>
+        <h4 style="color: #5DADE2">Current Enemies
+        <%= button_to "Enemies", enemies_path, method: "get"%>
+        </h4>
+         
+    </li>
+    <li>
+        <h4 style="color: #5DADE2">Current Locations
+        <%= button_to "Locations", locations_path, method: "get"%>
+        </h4> 
+    </li>
+    <li>
+        <h4 style="color: #5DADE2">Current Attacks
+        <%= button_to "Attacks", attacks_path, method: "get"%>
+        </h4> 
+    </li>
+
+</ul>

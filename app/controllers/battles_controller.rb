@@ -44,7 +44,8 @@ class BattlesController < ApplicationController
   
       private
   
+
         def battle_params
-          params.require(:battle).permit(:state, :prize, :location_id, :player_id, :enemy_id)
+          params.require(:battle).permit(:state, :prize,:player_id, :enemy_id, :location_id, :attack_id)
         end
 end

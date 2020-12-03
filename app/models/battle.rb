@@ -4,8 +4,4 @@ class Battle < ApplicationRecord
     belongs_to :location
     belongs_to :attack
 
-    def attack_slots
-    
-
-
 end

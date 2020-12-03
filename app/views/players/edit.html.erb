@@ -1,0 +1,35 @@
+
+<h1>Player Creator</h1>
+
+<%if @player.errors.any? %>
+<h4 style="color: #5DADE2">Errors</h4>
+
+    <% @player.errors.full_messages.each do |message| %>
+    <li> <%=message%> </li> 
+    <% end %>
+<% end %>
+<br>
+
+
+<%= form_for(@player) do |f| %>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :Health %>
+    <br>
+    <%= f.text_field :health %>
+    <br>
+    <br>
+    <%= f.label :Attacks %>
+    <br>
+    <%= f.collection_select :attack_ids, @player.attacks, :id, :name %>
+    <br>
+    <br>
+    <%= f.submit%>
+
+    <% end %>
+
+    <br>
+    <%= link_to "Back to Main Menu", battles_path %>

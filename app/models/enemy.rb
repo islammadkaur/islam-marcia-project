@@ -4,13 +4,6 @@ class Enemy < ApplicationRecord
     has_many :locations, through: :battles
     has_many :players, through: :battles
 
-    # attr_accessor :name, :health
-    
-    # def initialize(name, health = 100)
-    #     @name = name
-    #     @health = health
-    # end
-
 # 19 names
 # 68 adjectives
     def self.generate_name
@@ -42,11 +35,12 @@ class Enemy < ApplicationRecord
         enemy = Enemy.new
         enemy.name = generate_name
         enemy.health = 100
-
-            puts enemy.name
-            puts enemy.health
-        # enemy.attacks = Attack.sample(3)
+        enemy.attacks << Attack.all.sample(3)
         # enemy.save
+
+        puts enemy.name
+        puts enemy.health
+        puts enemy.attacks
     end
 
 
