@@ -1,0 +1,8 @@
+<h1>Enemies</h1>
+<% @enemies.each do |enemy| %>
+    <ul>
+        <li>
+            <%= link_to enemy.name, enemy_path(enemy)%>
+        </li>
+    </ul>
+<%end%>
