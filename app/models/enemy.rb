@@ -11,13 +11,13 @@ class Enemy < ApplicationRecord
       @name = name
     end
 
-# 23 names
+# 19 names
 # 68 adjectives
     def self.generate_name
         name_array = ['Alexa', 'Arhamm', 'Bart', 'Brodrick', 'Cole', 'Dena', 
-                      'Derick', 'Dom', 'Ev', 'Islam', 'Jake', 'Kyle', 'Marcia',
-                      'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 'Raza', 
-                      'Ronalyssa', 'Rupa', 'Sam', 'Tyler']
+                      'Derick', 'Dom', 'Ev', 'Islam', 'Kyle', 'Marcia',
+                      'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 
+                      'Ronalyssa', 'Sam']
 
         adj_array = ['adorable', 'adventurous', 'anxious', 'average', 'amused',
                      'bored', 'bewildered', 'brave', 'breakable', 'busy',
