@@ -1,0 +1,23 @@
+<body id="game_play">
+
+<h1>New Battle Form</h1>
+
+<%= form_for(@battle) do |battle|%>
+
+    <%= battle.label "Pick your opponent:" %><br>
+    <%= battle.collection_select :enemy_id, Enemy.all, :id, :name %><br>
+    <br>
+    <%= battle.label "Pick Your Battlefield:" %><br>
+    <%= battle.collection_select :location_id, Location.all, :id, :name %><br>
+<br>
+    <%= submit_tag %>
+
+<%end%>
+
+<% if @battle.errors.any? %>
+    <% @battle.errors.full_messages.each do |message| %>
+        <ul>
+            <li><%= message %><li>
+        </ul>
+    <%end%>
+<%end%>

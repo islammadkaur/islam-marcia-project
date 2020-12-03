@@ -45,6 +45,6 @@ class AttacksController < ApplicationController
       private
   
         def attack_params
-          params.require(:attack).permit(:name, :damage, :type)
+          params.require(:attack).permit(:name, :damage, :attack_type)
         end
 end
