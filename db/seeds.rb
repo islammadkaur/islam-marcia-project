@@ -44,3 +44,9 @@ snitch = Attack.create(name: "Tells Your Signicant Other That You're Cheating", 
 lawsuit = Attack.create(name: "Lawsuit", attack_type: "Financial", damage: 80)
 
 #------------------------------------------------------------------------------------------------------------------------------>
+#PRIZES
+
+pimp_slap
+high_five
+thumbs_up
+cash
