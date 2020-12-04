@@ -3,6 +3,53 @@ class Enemy < ApplicationRecord
     has_many :attacks
     has_many :locations, through: :battles
     has_many :players, through: :battles
+
+    attr_accessor :name, :health
+    
+    def initialize(health = 100)
+      @health = health
+      @name = name
+    end
+
+# 23 names
+# 68 adjectives
+    def self.generate_name
+        name_array = ['Alexa', 'Arhamm', 'Bart', 'Brodrick', 'Cole', 'Dena', 
+                      'Derick', 'Dom', 'Ev', 'Islam', 'Jake', 'Kyle', 'Marcia',
+                      'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 'Raza', 
+                      'Ronalyssa', 'Rupa', 'Sam', 'Tyler']
+
+        adj_array = ['adorable', 'adventurous', 'anxious', 'average', 'amused',
+                     'bored', 'bewildered', 'brave', 'breakable', 'busy',
+                     'cautious', 'charming','cheerful', 'clumsy', 'concerned',
+                     'dangerous', 'defiant', 'determined', 'disturbed', 'dull',
+                     'elegant', 'encouraging', 'excited', 'expensive', 'evil',
+                     'fancy', 'fierce', 'funny', 'friendly', 'fragile',
+                     'gifted', 'good', 'grumpy', 'gleaming', 'graceful',
+                     'helpful', 'hilarious', 'homely', 'lucky', 'long',
+                     'inexpensive', 'itchy', 'lively', 'mysterious', 'odd',
+                     'prickly', 'jittery', 'powerful', 'relieved', 'rich',
+                     'sparkling', 'sleepy', 'splendid', 'strange', 'super',
+                     'tasty', 'thoughtful', 'tired', 'tough', 'uninterested',
+                     'unsightly', 'unusual', 'wandering', 'weary', 'wild',
+                     'witty', 'zany', 'zealous']
+
+        name = "#{name_array.sample} the #{adj_array.sample}"
+    end
+
+    # needs to be changed from a self method once we figure out where we want to generate a new enemy
+    def self.create_enemy
+        enemy = Enemy.new
+        enemy.name = generate_name
+        enemy.health = 100
+
+            puts enemy.name
+            puts enemy.health
+        # enemy.attacks = Attack.sample(3)
+        # enemy.save
+    end
+
+
     
 
 end

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_153820) do
     t.string "name"
     t.string "damage"
     t.string "attack_type"
+    t.string "target"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "target"

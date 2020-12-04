@@ -2,7 +2,14 @@ class Battle < ApplicationRecord
     belongs_to :player
     belongs_to :enemy
     belongs_to :location
+<<<<<<< HEAD
     belongs_to :attack, optional: true
+=======
+    belongs_to :attack
+
+    def attack_slots
+    
+>>>>>>> d39791c25ac59a1fd6c47d4be397c4498758b8b9
 
 
 
