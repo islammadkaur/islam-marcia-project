@@ -2,24 +2,21 @@
 
 <h1><%= @player.name%></h1>
 <h1><%= @player.health%></h1>
+<br>
     <h4>Attacks</h4>
-    <br>
-<p>
-<%  @attack_slots.each do |attack| %>
+
+<%  @attack_slots.each do |player_attack| %>
     <ul>
         <li>
-            <%= attack.name%>
+            <%= player_attack.name%>
             <br>
-             <%= attack.damage%>
+            Attack type: <%= player_attack.attack_type%>
             <br>
-             <%= attack.attack_type%>
-            <br>
-             <%= attack.target%>
+            Target: <%= player_attack.target%>
             <br>
         </li>
     </ul>
 <%end%>
-</p>
 
 
 

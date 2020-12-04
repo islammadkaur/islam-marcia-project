@@ -18,22 +18,7 @@
     <br>
     <%= f.submit%>
     <br>
-    <%= f.hidden_field #attack key need to pass this info to create%>
-
     <% end %>
-
-    <h4>Attacks</h4>
-    <p> 
-        <%  @attack_slots.each do |attack| %>
-            <ul>
-                <li>
-                    <%= attack.name%>
-                    <br>
-                    Damage: <%= attack.damage%>
-                </li>
-            </ul>
-        <%end%>
-    </p>
 
     <br>
     <%= link_to "Go Back", players_path %>

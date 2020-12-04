@@ -13,13 +13,23 @@
 <%= form_for(@player) do |f| %>
     <%= f.label :Name %>
     <br>
+
     <%= f.text_field :name %>
     <br>
-    <br>
+        <%  @attack_slots.each do |player_attack| %>
+    <ul>
+        <li>
+            <%= player_attack.name%>
+            <br>
+            Attack type: <%= player_attack.attack_type%>
+            <br>
+            Target: <%= player_attack.target%>
+            <br>
+        </li>
+    </ul>
+        <%end%>
     <%= f.submit%>
-
     <% end %>
-    
 
     <br>
     <%= link_to "Go Back", players_path %>
