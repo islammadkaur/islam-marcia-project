@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  # resources :games
   resources :locations
   resources :attacks
   resources :enemies
-  resources :players#, only: [:index, :edit, :create, :show, :new, :delete]
-  resources :battles, only: [:index, :show, :new]
-
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :players
+  resources :battles, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+  patch 'battles/:id/damage', to: "battles#damage", as: "damage"
+  get 'battles/:id/state', to: "battles#state", as: "state"
 end

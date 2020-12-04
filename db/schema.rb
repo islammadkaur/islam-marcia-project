@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_12_02_191030) do
 
+
   create_table "attacks", force: :cascade do |t|
     t.string "name"
     t.string "damage"
@@ -19,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_191030) do
     t.string "target"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "target"
   end
 
   create_table "battles", force: :cascade do |t|

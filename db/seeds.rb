@@ -59,3 +59,8 @@ sneeze = Attack.create(name: "Sneeze in Face", damage: 40, attack_type: "Physica
 sweaty_hug = Attack.create(name: "Sweaty Hug", damage: 20, attack_type: "Emotional", target: "opponent")
 jive_turkey = Attack.create(name: "Call them a Jive Turkey", damage: 15, attack_type: "Verbal", target: "opponent")
 pep_talk = Attack.create(name: "Give yourself a pep talk", damage: -15, attack_type: "Verbal", target: "self")
+
+#------------------------------------------------------------------------------------------------------------------------------>
+#PRIZES
+
+
