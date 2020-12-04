@@ -1,8 +1,17 @@
+<body id="player_index">
 <h1>Enemies</h1>
 <% @enemies.each do |enemy| %>
     <ul>
         <li>
             <%= link_to enemy.name, enemy_path(enemy)%>
+            <br>
+            <%= enemy.attacks%>
         </li>
     </ul>
 <%end%>
+
+<%= button_to "Create a new Enemy", new_enemy_path(@enemy), method: "get"%>
+<br>
+<%= link_to "Back to Main Menu", battles_path %>
+
+</body>

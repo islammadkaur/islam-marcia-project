@@ -1,0 +1,38 @@
+
+<h1>Enemy Creator</h1>
+
+<%if @enemy.errors.any? %>
+<h4 style="color: #5DADE2">Errors</h4>
+
+    <% @enemy.errors.full_messages.each do |message| %>
+    <li> <%=message%> </li> 
+    <% end %>
+<% end %>
+<br>
+
+
+<%= form_for(@enemy) do |f| %>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.submit%>
+
+    <% end %>
+
+    <h4>Attacks</h4>
+    <p> 
+        <%  @attack_slots.each do |attack| %>
+            <ul>
+                <li>
+                    <%= attack.name%>
+                    <br>
+                    Damage: <%= attack.damage%>
+                </li>
+            </ul>
+        <%end%>
+    </p>
+
+<br>
+<%= link_to 'Go Back', enemies_path %><br>

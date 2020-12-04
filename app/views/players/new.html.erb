@@ -1,22 +1,37 @@
-<body id="game_play">
+<h1>Player Creator</h1>
 
-<h1>New Player Form</h1>
-<%= form_for(@player) do |player|%>
+<%if @player.errors.any? %>
+<h4 style="color: #5DADE2">Errors</h4>
 
-
-
-    <%= player.label "name:" %><br>
-    <%= player.text_field :name %><br>
-
-<br>
-    <%= submit_tag %>
-
-<%end%>
-
-<% if @player.errors.any? %>
     <% @player.errors.full_messages.each do |message| %>
-        <ul>
-            <li><%= message %><li>
-        </ul>
-    <%end%>
-<%end%>
+    <li> <%=message%> </li> 
+    <% end %>
+<% end %>
+<br>
+
+
+<%= form_for(@player) do |f| %>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.submit%>
+
+    <% end %>
+
+    <h4>Attacks</h4>
+    <p> 
+        <%  @attack_slots.each do |attack| %>
+            <ul>
+                <li>
+                    <%= attack.name%>
+                    <br>
+                    Damage: <%= attack.damage%>
+                </li>
+            </ul>
+        <%end%>
+    </p>
+
+    <br>
+    <%= link_to "Go Back", players_path %>
