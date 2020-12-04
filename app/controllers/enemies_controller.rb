@@ -13,7 +13,7 @@ class EnemiesController < ApplicationController
       end
   
       def create
-        @enemy = Enemy.new(enemy_params)
+        @enemy = Enemy.new(enemy_params.merge(health: 100))
         if @enemy.save
           redirect_to enemy_path(@enemy)
         else

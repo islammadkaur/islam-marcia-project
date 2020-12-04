@@ -1,7 +1,6 @@
 class Attack < ApplicationRecord
-    has_many :battles
-    has_many :players, through: :battles
-    has_many :enemies, through: :battles
+    has_many :players, through: :player_attacks
+    has_many :enemies, through: :enemy_attacks
 
     validate :correct_attack_type, :correct_target
     validates :name, presence: true, uniqueness: true

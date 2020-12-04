@@ -4,6 +4,22 @@
 <h1><%= @player.health%></h1>
     <h4>Attacks</h4>
     <br>
+<p>
+<%  @attack_slots.each do |attack| %>
+    <ul>
+        <li>
+            <%= attack.name%>
+            <br>
+             <%= attack.damage%>
+            <br>
+             <%= attack.attack_type%>
+            <br>
+             <%= attack.target%>
+            <br>
+        </li>
+    </ul>
+<%end%>
+</p>
 
 
 
