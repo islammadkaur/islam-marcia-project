@@ -4,8 +4,11 @@ class Battle < ApplicationRecord
     belongs_to :location
     belongs_to :attack, optional: true
 
+<<<<<<< HEAD
     # def attack_slots
     
+=======
+>>>>>>> 515803481449964079b9d25a28d2eda7bb90dd87
 
 
 

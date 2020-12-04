@@ -1,3 +1,4 @@
+<body id="player_index">
 <h1>Attacks</h1>
 <% @attacks.each do |attack| %>
     <ul>
@@ -6,3 +7,9 @@
         </li>
     </ul>
 <%end%>
+
+<%= button_to "Create a new Attack", new_attack_path(@attack), method: "get"%>
+<br>
+<%= link_to "Back to Main Menu", battles_path %>
+
+</body>

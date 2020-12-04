@@ -1,0 +1,38 @@
+
+<h1>Attack Editor</h1>
+
+<%if @attack.errors.any? %>
+<h4 style="color: #5DADE2">Errors</h4>
+
+    <% @attack.errors.full_messages.each do |message| %>
+    <li> <%=message%> </li> 
+    <% end %>
+<% end %>
+<br>
+
+<%= form_for(@attack) do |f| %>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :Damage %>
+    <br>
+    <%= f.text_field :damage %>
+    <br>
+    <br>
+    <%= f.label :'Attack type' %>
+    <br>
+    <%= f.text_field :attack_type %>
+    <br>
+    <br>
+    <%= f.label :Target %>
+    <br>
+    <%= f.text_field :target %>
+    <br>
+    <br>
+    <%= f.submit%>
+    <% end %>
+
+    <br>
+    <%= link_to "Go Back", attacks_path %>

@@ -4,20 +4,15 @@ class Enemy < ApplicationRecord
     has_many :locations, through: :battles
     has_many :players, through: :battles
 
-    attr_accessor :name, :health
-    
-    def initialize(health = 100)
-      @health = health
-      @name = name
-    end
+    validates :name, presence: true, uniqueness: true
 
-# 23 names
+# 19 names
 # 68 adjectives
     def self.generate_name
         name_array = ['Alexa', 'Arhamm', 'Bart', 'Brodrick', 'Cole', 'Dena', 
-                      'Derick', 'Dom', 'Ev', 'Islam', 'Jake', 'Kyle', 'Marcia',
-                      'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 'Raza', 
-                      'Ronalyssa', 'Rupa', 'Sam', 'Tyler']
+                      'Derick', 'Dom', 'Ev', 'Islam', 'Kyle', 'Marcia',
+                      'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 
+                      'Ronalyssa', 'Sam']
 
         adj_array = ['adorable', 'adventurous', 'anxious', 'average', 'amused',
                      'bored', 'bewildered', 'brave', 'breakable', 'busy',
@@ -42,11 +37,12 @@ class Enemy < ApplicationRecord
         enemy = Enemy.new
         enemy.name = generate_name
         enemy.health = 100
-
-            puts enemy.name
-            puts enemy.health
-        # enemy.attacks = Attack.sample(3)
+        enemy.attacks << Attack.all.sample(3)
         # enemy.save
+
+        puts enemy.name
+        puts enemy.health
+        puts enemy.attacks
     end
 
 

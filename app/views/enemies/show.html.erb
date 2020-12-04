@@ -1,4 +1,17 @@
-<%= @enemy.name%><br>
-<%= @enemy.health%><br>
+<body id="player_show">
 
-<%= link_to 'Homepage', enemies_path %><br>
+<h1><%= @enemy.name%></h1>
+<h1><%= @enemy.health%></h1>
+    <h4>Attacks</h4>
+    <br>
+
+
+
+<%= button_to "Edit", edit_enemy_path(@enemy), method: "get"%>
+<br>
+<%= button_to "Delete", enemy_path(@enemy), method: "delete"%>
+<br>
+<br>
+<%= link_to 'Go Back', enemies_path %><br>
+
+</body>

@@ -1,6 +1,14 @@
+<body id="player_index">
+
 <h1>Locations</h1>
 <% @locations.each do |location| %>
 <ul>
   <li><%= link_to location.name, location_path(location)%>
 </ul>
 <%end%>
+
+<%= button_to "Create a new Location", new_location_path(@location), method: "get"%>
+<br>
+<%= link_to "Back to Main Menu", battles_path %>
+
+</body>
