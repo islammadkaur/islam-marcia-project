@@ -5,7 +5,9 @@ class PlayersController < ApplicationController
     
       def show
         @player = Player.find(params[:id])
-        @attack_slots = @player.attacks
+        # @attack = @player.attack
+        # current_attacks = @attack.name
+
       end
     
       def new
@@ -21,6 +23,15 @@ class PlayersController < ApplicationController
           render :new
         end
       end
+
+      # def attackassign
+      #   @player = Player.find(params[:id])
+      #   @attack = @player.attacks
+      #   current_attacks = @attack.id
+      #   attacks = current_attacks.sample(3)
+      #   @player.update(attack_id: attacks)
+      #   redirect_to player_path(@player)
+      # end
   
       def edit
         @player = Player.find(params[:id])

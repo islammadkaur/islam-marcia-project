@@ -3,6 +3,7 @@ class Player < ApplicationRecord
     has_many :attacks
     has_many :locations, through: :battles
     has_many :enemies, through: :battles
+    has_many :attacks, through: :battles
 
     validates :name, presence: true, uniqueness: true
     
@@ -44,6 +45,18 @@ class Player < ApplicationRecord
         puts player.name
         puts player.health
         puts player.attack_slots
+    end
+
+    def attackname
+        player_attacks = []
+        find_player = Player.all.find do |player|
+            player == self
+        end
+        get_attacks = Attack.all.map do |attack|
+            attack.name
+        end
+        player_attacks << get_attacks.sample(3)
+        player_attacks
     end
 
 

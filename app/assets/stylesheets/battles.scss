@@ -109,3 +109,73 @@ img {
 
 }
 
+img#confetti {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+img#lost {
+    width: 40%;
+    height: 40%;
+    position: relative;
+}
+img#fire {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#winner h1 {
+    color: white;
+    text-align: center;
+}
+
+#winner {
+    background-color: #1b1b1b;
+}
+
+img#ice_cream {
+    margin-left: 30%;
+    margin-right: 30%;
+    bottom: 40%;
+    // margin: auto;
+    width: 40%;
+    position: absolute;
+}
+
+#winner input {
+    background-color: rgb(41, 169, 173);
+    top: 600px;
+    margin-left: 35%;
+    margin-right: 35%;
+    // margin: auto;
+    width: 30%;
+    height: 6%;
+    position: absolute;
+    font-size: 20px;
+}
+
+#opponent {
+    color: red;
+    text-align: center;
+}
+
+#battle_show input {
+    background-color: red;
+    width: 25%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 20%;
+    position: relative;
+}
+
+#battle_show #bank {
+    width: 100%;
+    height: 100%;
+    // left: 10%;
+    // right: 10%;
+    position: absolute;
+}
+
+
+

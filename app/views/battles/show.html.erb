@@ -1,19 +1,21 @@
+
 <body id="battle_show">
 
-<h4><%= "#{@battle.player.name} vs. #{@battle.enemy.name}"%></h4>
-
-<div id="battle_page_player">
-
-    <%= "#{@battle.player.name}"%><br>
-    <%= "Health: #{@battle.player.health}"%><br>
-    <progress value = <%=@battle.player.health%> max = "100"></progress>
-    <img src="https://media0.giphy.com/media/ucNIl89MV9pS0/giphy.gif">
-    <%= button_to "Attack", damage_path(@battle), method: "patch"%>
-
-</div>
+<%# <img id="bank" src="https://cdn.shopify.com/s/files/1/0065/4917/6438/products/exterior-of-a-large-city-bank-background_4b909c43-363e-4274-b7c9-ee89aee86ee9_1200x1200.jpg?v=1549230870"> %>
 
 
+<div id="battle_zone">
+    <img id="bank" src="https://i.redd.it/0bb6dqsiab451.gif">
+    <div id="battle_page_player">
+<h3 id="opponent"><%= "#{@battle.player.name} vs. #{@battle.enemy.name}"%></h4>
 
+        <%= "#{@battle.player.name}"%><br>
+        <%= "Health: #{@battle.player.health}"%><br>
+        <progress value = <%=@battle.player.health%> max = "100"></progress>
+        <img src="https://media0.giphy.com/media/ucNIl89MV9pS0/giphy.gif">
+
+        <%= button_to "Attack", damage_path(@battle), method: "patch"%>
+    </div>
 
     <div id="battle_page_enemy">
 
@@ -24,9 +26,12 @@
 
     </div>
 
-    <%# <%=@battle.attackname%> 
-    <%=@battle.random.name%>
-    <%=@battle.random.damage%>
+</div>
+
+
+    <%# <%=@battle.damage%> 
+    <%# <%=@battle.random.name%> 
+    <%# <%=@battle.random.damage%> 
 
 
      
