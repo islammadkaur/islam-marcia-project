@@ -1,2 +1,9 @@
+<body id="battles_index">
+
 <h1>Start a new battle</h1>
-<%= button_to "New Battle", new_battle_path(@battle), method: "get"%>
+<%= button_to "New Player", new_player_path, method: "get"%><br>
+<%= button_to "Existing Player", new_battle_path(@battle), method: "get"%>
+<%# <% @battles.each do |battle|%>
+<%# <%= battle.enemy.name%> 
+<%# <%end%> 
+
