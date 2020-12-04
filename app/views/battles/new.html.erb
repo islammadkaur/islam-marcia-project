@@ -1,16 +1,18 @@
-<body id="game_play">
+<body id="battle_new">
 
 <h1>New Battle Form</h1>
-
 <%= form_for(@battle) do |battle|%>
 
-    <%= battle.label "Pick your opponent:" %><br>
-    <%= battle.collection_select :enemy_id, Enemy.all, :id, :name %><br>
-    <br>
-    <%= battle.label "Pick Your Battlefield:" %><br>
-    <%= battle.collection_select :location_id, Location.all, :id, :name %><br>
-<br>
-    <%= submit_tag %>
+    <%= battle.label :player %>
+    <%= battle.collection_select :player_id, Player.all, :id, :name %>
+    
+    <%= battle.label :enemy_id %>
+    <%= battle.collection_select :enemy_id, Enemy.all, :id, :name %>
+
+    <%= battle.label :location_id %>
+    <%= battle.collection_select :location_id, Location.all, :id, :name %>
+
+    <%= battle.submit %>
 
 <%end%>
 
@@ -21,3 +23,8 @@
         </ul>
     <%end%>
 <%end%>
+
+
+
+    <%# <%= battle.label :attack_id %>
+    <%# <%= battle.collection_select :attack_id, Attack.all, :id, :name %>

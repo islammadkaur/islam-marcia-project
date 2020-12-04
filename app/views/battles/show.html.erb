@@ -1,0 +1,33 @@
+<body id="battle_show">
+
+<h4><%= "#{@battle.player.name} vs. #{@battle.enemy.name}"%></h4>
+
+<div id="battle_page_player">
+
+    <%= "#{@battle.player.name}"%><br>
+    <%= "Health: #{@battle.player.health}"%><br>
+    <progress value = <%=@battle.player.health%> max = "100"></progress>
+    <img src="https://media0.giphy.com/media/ucNIl89MV9pS0/giphy.gif">
+    <%= button_to "Attack", damage_path(@battle), method: "patch"%>
+
+</div>
+
+
+
+
+    <div id="battle_page_enemy">
+
+        <%= "#{@battle.enemy.name}"%><br>
+        <%= "Health: #{@battle.enemy.health}"%><br>
+        <progress value = <%= @battle.enemy.health%> max = "100"></progress>
+        <img src="https://media2.giphy.com/media/WtTn8vD7gnf2PwA6Ap/source.gif">
+
+    </div>
+
+    <%# <%=@battle.attackname%> 
+    <%=@battle.random.name%>
+    <%=@battle.random.damage%>
+
+
+     
+

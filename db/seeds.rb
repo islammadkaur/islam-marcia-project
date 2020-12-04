@@ -30,23 +30,18 @@ kick = Attack.create(name: "Kick", attack_type: "Physical", damage: 20)
 punch = Attack.create(name: "Punch", attack_type: "Physical", damage: 20)
 toe_stepper = Attack.create(name: "Toe Stepper", attack_type: "Physical", damage: 5)
 confusion = Attack.create(name: "Confusion", attack_type: "Emotional", damage: 30)
-insult = Attack.create(name: "Insult", attack_type: "Verbal", damage: 15)
-reality = Attack.create(name: "Reality Check", attack_type: "Emotional", damage: 40)
-account_hack = Attack.create(name: "Bank Account Hack", attack_type: "Financial", damage: 40)
-student_loan_transfer = Attack.create(name: "Student Loan Transferred", attack_type: "Financial", damage: 40)
-yo_mama = Attack.create(name: "Yo Mama", attack_type: "Verbal", damage: 10)
-manager = Attack.create(name: "Let Me Talk To The Manager", attack_type: "Verbal", damage: 25)
-haunted = Attack.create(name: "Haunted House", attack_type: "Spiritual", damage: 35)
-god = Attack.create(name: "God Doesn’t Like You", attack_type: "Spiritual", damage: 35)
-ghost_tickles_your_toes = Attack.create(name: "Ghost Tickles Your Toes", attack_type: "Spiritual", damage: 35)
-self_destruct = Attack.create(name: "Self Destruct", attack_type: "Physical", damage: 100)
-snitch = Attack.create(name: "Tells Your Signicant Other That You're Cheating", attack_type: "Emotional", damage: 100)
-lawsuit = Attack.create(name: "Lawsuit", attack_type: "Financial", damage: 80)
+# insult = Attack.create(name: "Insult", attack_type: "Verbal", damage: 15)
+# reality = Attack.create(name: "Reality Check", attack_type: "Emotional", damage: 40)
+# account_hack = Attack.create(name: "Bank Account Hack", attack_type: "Financial", damage: 40)
+# student_loan_transfer = Attack.create(name: "Student Loan Transferred", attack_type: "Financial", damage: 40)
+# yo_mama = Attack.create(name: "Yo Mama", attack_type: "Verbal", damage: 10)
+# manager = Attack.create(name: "Let Me Talk To The Manager", attack_type: "Verbal", damage: 25)
+# haunted = Attack.create(name: "Haunted House", attack_type: "Spiritual", damage: 35)
+# god = Attack.create(name: "God Doesn’t Like You", attack_type: "Spiritual", damage: 35)
+# ghost_tickles_your_toes = Attack.create(name: "Ghost Tickles Your Toes", attack_type: "Spiritual", damage: 35)
+# self_destruct = Attack.create(name: "Self Destruct", attack_type: "Physical", damage: 100)
+# snitch = Attack.create(name: "Tells Your Signicant Other That You're Cheating", attack_type: "Emotional", damage: 100)
+# lawsuit = Attack.create(name: "Lawsuit", attack_type: "Financial", damage: 80)
 
 #------------------------------------------------------------------------------------------------------------------------------>
 #PRIZES
-
-pimp_slap
-high_five
-thumbs_up
-cash
