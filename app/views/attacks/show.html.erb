@@ -1,7 +1,4 @@
-<%= @attack.name%><br>
-<%= @attack.attack_type%><br>
-<%= @attack.damage%><br>
-<%= link_to 'Homepage', attacks_path %><br>
+<h1><%= @attack.name%></h1>
 <%def img%>
 <%img = []%>
 <% if @attack.name == "Kick" %>
@@ -25,3 +22,14 @@
 <%end%>
 
 <%img%>
+
+<h3>Type: <%= @attack.attack_type%></h3>
+<h3>Damage: <%= @attack.damage%></h3>
+<h3>Target: <%= @attack.target%></h3>
+
+<%= button_to "Edit", edit_attack_path(@attack), method: "get"%>
+<br>
+<%= button_to "Delete", attack_path(@attack), method: "delete"%>
+<br>
+<br>
+<%= link_to 'Go Back', attacks_path %><br>

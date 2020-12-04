@@ -1,17 +1,17 @@
 
-<h1>Player Creator</h1>
+<h1>Enemy Creator</h1>
 
-<%if @player.errors.any? %>
+<%if @enemy.errors.any? %>
 <h4 style="color: #5DADE2">Errors</h4>
 
-    <% @player.errors.full_messages.each do |message| %>
+    <% @enemy.errors.full_messages.each do |message| %>
     <li> <%=message%> </li> 
     <% end %>
 <% end %>
 <br>
 
 
-<%= form_for(@player) do |f| %>
+<%= form_for(@enemy) do |f| %>
     <%= f.label :Name %>
     <br>
     <%= f.text_field :name %>
@@ -34,5 +34,5 @@
         <%end%>
     </p>
 
-    <br>
-    <%= link_to "Go Back", players_path %>
+<br>
+<%= link_to 'Go Back', enemies_path %><br>

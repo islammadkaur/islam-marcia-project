@@ -4,6 +4,8 @@ class Enemy < ApplicationRecord
     has_many :locations, through: :battles
     has_many :players, through: :battles
 
+    validates :name, presence: true, uniqueness: true
+
 # 19 names
 # 68 adjectives
     def self.generate_name

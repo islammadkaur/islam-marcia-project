@@ -2,14 +2,14 @@
 
 <h1><%= @player.name%></h1>
 <h1><%= @player.health%></h1>
-<h1><%= @player.attacks%></h1>
+    <h4>Attacks</h4>
+    <br>
+
+
 
 <%= button_to "Edit", edit_player_path(@player), method: "get"%>
 <br>
 <%= button_to "Delete", player_path(@player), method: "delete"%>
 <br>
-<%= button_to "Back to Players", players_path, method: "get"%>
 <br>
-<br>
-    <%= link_to "Back to Main Menu", battles_path %>
-</body>
+<%= link_to 'Go Back', players_path %><br>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :attacks
   resources :enemies
-  resources :players
+  resources :players#, only: [:index, :edit, :create, :show, :new, :delete]
   resources :battles, only: [:index, :show, :new]
 
 

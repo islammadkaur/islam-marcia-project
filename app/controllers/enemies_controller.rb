@@ -9,6 +9,7 @@ class EnemiesController < ApplicationController
     
       def new
         @enemy = Enemy.new
+        @attack_slots = @enemy.attacks << Attack.all.sample(3)
       end
   
       def create
@@ -37,7 +38,7 @@ class EnemiesController < ApplicationController
       def destroy
         @enemy = Enemy.find(params[:id])
         if @enemy.destroy
-          redirect_to enemys_path
+          redirect_to enemies_path
         end
   
       end
