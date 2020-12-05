@@ -1,6 +1,6 @@
 class Player < ApplicationRecord
     has_many :battles
-    has_many :attacks
+    has_many :attacks, through: :player_attacks
     has_many :locations, through: :battles
     has_many :enemies, through: :battles
     has_many :attacks, through: :battles
@@ -9,7 +9,7 @@ class Player < ApplicationRecord
     
     # 19 names
     # 68 adjectives
-    def self.generate_name
+    def generate_name
         name_array = ['Alexa', 'Arhamm', 'Bart', 'Brodrick', 'Cole', 'Dena', 
                     'Derick', 'Dom', 'Ev', 'Islam', 'Kyle', 'Marcia',
                     'Max', 'Muhidin', 'Nicole', 'Oscar', 'Rakshan', 
@@ -34,17 +34,22 @@ class Player < ApplicationRecord
     end
 
     # needs to be changed from a self method once we figure out where we want to generate a new enemy
-    def self.create_player
-        player = Player.new
-        player.name = generate_name
-        player.health = 100
-        player.attacks << Attack.all.sample(3)
-        
-        player.save
+    def create_player
+        self.name = generate_name
+        self.health = 100
 
-        puts player.name
-        puts player.health
-        puts player.attack_slots
+        # attack_slots = self.attacks
+        # attack_slots << Attack.all.sample(3)
+        
+        # self.save
+
+        # puts self.name
+        # puts self.health
+
+        # attack_slots.each do |attack|
+        #     puts attack.name
+
+        # end
     end
 
     def attackname

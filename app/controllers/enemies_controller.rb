@@ -1,30 +1,43 @@
 class EnemiesController < ApplicationController
+
     def index
         @enemies = Enemy.all
       end
     
+
       def show
         @enemy = Enemy.find(params[:id])
+        attacks
       end
     
+
       def new
         @enemy = Enemy.new
-        @attack_slots = @enemy.attacks << Attack.all.sample(3)
       end
   
+
       def create
         @enemy = Enemy.new(enemy_params.merge(health: 200))
         if @enemy.save
+        @enemy = Enemy.new(enemy_params.merge(health: 100))
+          if @enemy.save
+            3.times do |attack|
+              random_attack = Attack.all.sample
+              EnemyAttack.create(enemy_id: @enemy.id, attack_id: random_attack.id)
+          end
           redirect_to enemy_path(@enemy)
         else
           render :new
         end
       end
   
+
       def edit
         @enemy = Enemy.find(params[:id])
+        attacks
       end
     
+
       def update
           @enemy = Enemy.find(params[:id])
           if @enemy.update(enemy_params)
@@ -43,6 +56,23 @@ class EnemiesController < ApplicationController
   
       end
   
+      
+      def attacks
+        @enemy_attacks = EnemyAttack.where(enemy_id: @enemy.id)
+        @attack_slots = []
+
+        Attack.all.select do |attack|
+          @enemy_attacks.select do |enemy_attack|
+              if attack.id === enemy_attack.attack_id 
+                @attack_slots << attack
+              end
+            end 
+        end 
+        @attack_slots
+    end
+
+
+
       private
   
         def enemy_params

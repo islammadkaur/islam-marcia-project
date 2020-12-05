@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_12_04_162353) do
+=======
+ActiveRecord::Schema.define(version: 2020_12_04_175553) do
+>>>>>>> 761f4558ba161d319d171034009f1b96e9a888fe
 
   create_table "attacks", force: :cascade do |t|
     t.string "name"
@@ -27,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_12_04_162353) do
     t.integer "player_id"
     t.integer "enemy_id"
     t.integer "location_id"
-    t.integer "attack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,6 +50,9 @@ ActiveRecord::Schema.define(version: 2020_12_04_162353) do
     t.integer "battle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  create_table "enemy_attacks", force: :cascade do |t|
+    t.integer "enemy_id"
+    t.integer "attack_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -54,6 +60,11 @@ ActiveRecord::Schema.define(version: 2020_12_04_162353) do
     t.string "location_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "player_attacks", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "attack_id"
   end
 
   create_table "players", force: :cascade do |t|

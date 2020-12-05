@@ -3,7 +3,19 @@
 <h1><%= @enemy.name%></h1>
 <h1><%= @enemy.health%></h1>
     <h4>Attacks</h4>
-    <br>
+
+<%  @attack_slots.each do |enemy_attack| %>
+    <ul>
+        <li>
+            <%= enemy_attack.name%>
+            <br>
+            Attack type: <%= enemy_attack.attack_type%>
+            <br>
+            Target: <%= enemy_attack.target%>
+            <br>
+        </li>
+    </ul>
+<%end%>
 
 
 

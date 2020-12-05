@@ -5,6 +5,17 @@ class Battle < ApplicationRecord
     belongs_to :attack, optional: true
 
 
+
+
+    # def damage
+    #     find_damage = Attack.all.map do |attack|
+    #         attack.damage
+    #     end
+    #     # find_name = Attack.all.map do |attack|
+    #     #     attack.name          
+    #     find_damage.sample.to_i
+    # end
+
     def damage
         find_damage = Attack.all.map do |attack|
             attack.damage

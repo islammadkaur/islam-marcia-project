@@ -17,21 +17,8 @@
     <br>
     <br>
     <%= f.submit%>
-
+    <br>
     <% end %>
-
-    <h4>Attacks</h4>
-    <p> 
-        <%  @attack_slots.each do |attack| %>
-            <ul>
-                <li>
-                    <%= attack.name%>
-                    <br>
-                    Damage: <%= attack.damage%>
-                </li>
-            </ul>
-        <%end%>
-    </p>
 
     <br>
     <%= link_to "Go Back", players_path %>
