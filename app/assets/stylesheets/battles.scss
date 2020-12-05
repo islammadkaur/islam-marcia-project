@@ -2,19 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#battles_index {
+//Battle_Index-----------------------------------------------------------
+#battle_index {
     background-image: url("main_bc.gif");
     text-align: center;
     width: auto;
     height: auto;
 }
     
-#battles_index h1 {
+#battle_index h1 {
     color: white;
     text-align: center;
     border: 20px;
 }
 
+#battle_index h2 {
+    color: #566573;
+    text-align: center;
+    border: 20px;
+}
+
+#battle_index h4 {
+    color: #858585;
+    text-align: center;
+    border: 20px;
+}
+
+#battle_index ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #battle_index input {
+    width: 120px;
+    height: 40px;
+    margin: 15px;
+    top: 350px;
+    background-color: rgb(110, 33, 33);
+    color: white;
+
+}
+//Battle_New------------------------------------------------------------
 #battle_new {
     background-image: url("main_bc.gif");
     text-align: center;

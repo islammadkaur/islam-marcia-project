@@ -1,11 +1,11 @@
-<body id="player_index">
+<body id="index">
 <h1>Attacks</h1>
 <% @attacks.each do |attack| %>
-    <ul>
-        <li>
+    <div>
+        <p>
             <%= link_to attack.name, attack_path(attack)%>
-        </li>
-    </ul>
+        </p>
+    </div>
 <%end%>
 
 <%= button_to "Create a new Attack", new_attack_path(@attack), method: "get"%>
