@@ -32,16 +32,6 @@ class PlayersController < ApplicationController
         end
       end
 
-      # def attackassign
-      #   @player = Player.find(params[:id])
-      #   @attack = @player.attacks
-      #   current_attacks = @attack.id
-      #   attacks = current_attacks.sample(3)
-      #   @player.update(attack_id: attacks)
-      #   redirect_to player_path(@player)
-      # end
-  
-
       def edit
         @player = Player.find(params[:id])
         attacks

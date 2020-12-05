@@ -17,19 +17,27 @@ class Battle < ApplicationRecord
     #     find_damage.sample.to_i
     # end
 
-    def damage
-        find_damage = Attack.all.map do |attack|
-            attack.damage
-        end
-        # find_name = Attack.all.map do |attack|
-        #     attack.name
-        # end
+    # def damage
+    #     find_damage = Attack.all.map do |attack|
+    #         attack.damage
+    #     end
+    #     # find_name = Attack.all.map do |attack|
+    #     #     attack.name
+    #     # end
        
-        find_damage.sample.to_i
-    end
-    def prize
-        "Ice Cream"
-    end
+    #     find_damage.sample.to_i
+    # end
+
+    
+    # def prize
+def self.good_prize
+       good_prize_array = ["Ice Cream", "Pizza Party", "Vodka", "Pat On The Back", "Validation", "Pile Of Garbage", "Our Approval", "Half Eaten Sandwich"]
+       good_prize_array.sample
+end
+def self.bad_prize
+       bad_prize_array = ["Your Dignity", "Our Respect", "Your Friends", "Your Burrito", "Everything"]
+       bad_prize_array.sample
+end
 
  
 

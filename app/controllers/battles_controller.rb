@@ -5,6 +5,13 @@ class BattlesController < ApplicationController
 
   def show
     @battle = Battle.find(params[:id])
+    battle_start
+    p_attacks
+    e_attacks
+    atkmethod1
+    atkmethod2
+    atkmethod3
+
     if @battle.enemy.health <= 0
       @battle.update(state: "WON")
       redirect_to state_path(@battle)
@@ -41,46 +48,196 @@ class BattlesController < ApplicationController
       end
   end
 
+  def atkmethod1
+    @battle = Battle.find(params[:id])
+    p_attacks
+    e_attacks
+    battle_start
+    
+    @player_attack1 = @p_attack_slots[0]
+    @enemy_attack1 = @e_attack_slots[0]
 
-  def damage
-    battle = Battle.find(params[:id])
-    @enemy = battle.enemy
-    current_health = @enemy.health
-    @player = battle.player
-    current_health1 = @player.health
-    damage = battle.damage
-    new_health = current_health - damage
-    new_health > 0
-    new_health1 = current_health1 - damage
-    new_health1 
-    @enemy.update(health: new_health)
-    sleep 1
-    # @player.update(health: new_health1)
+    if @player_attack1.attack_type == @battle.location.location_type
+      @player_attack1.damage.to_i + 20
+    end
 
-    redirect_to battle_path(battle)
+    if @player_attack1.target == "Self"
+      @player_health -= @player_attack1.damage.to_i
+    else
+      @enemy_health -= @player_attack1.damage.to_i
+    end
+    if @enemy_attack1.target == "Self"
+      @enemy_health -= @enemy_attack1.damage.to_i
+    else
+      @player_health -= @enemy_attack1.damage.to_i
+    end
+    
+    
+    
+    # @enemy.update(health: @enemy_health)
+  
+    # sleep 1
+    # @player.update(health: @player_health)  
+  end
+
+  def atkmethod2
+    @battle = Battle.find(params[:id])
+    p_attacks
+    e_attacks
+    battle_start
+    
+
+    
+    @player_attack2 = @p_attack_slots[1]
+    @enemy_attack2 = @e_attack_slots[1]
+
+    if @player_attack2.attack_type == @battle.location.location_type
+      @player_attack2.damage.to_i + 20
+    end
+
+    if @player_attack2.target == "Self"
+      @player_health -= @player_attack2.damage.to_i
+    else
+      @enemy_health -= @player_attack2.damage.to_i
+    end
+    if @enemy_attack2.target == "Self"
+      @enemy_health -= @enemy_attack2.damage.to_i
+    else
+      @player_health -= @enemy_attack2.damage.to_i
+    end
+    
+
+
+    # @enemy.update(health: @enemy_health)
+  
+    # sleep 1
+    # @player.update(health: @player_health)  
+  end
+
+  def atkmethod3
+    @battle = Battle.find(params[:id])
+    p_attacks
+    e_attacks
+    battle_start
+    
+    @player_attack3 = @p_attack_slots[2]
+    @enemy_attack3 = @e_attack_slots[2]
+    
+    if @player_attack3.target == "Self"
+      @player_health -= @player_attack3.damage.to_i
+    else
+      @enemy_health -= @player_attack3.damage.to_i
+    end
+    if @enemy_attack3.target == "Self"
+      @enemy_health -= @enemy_attack3.damage.to_i
+    else
+      @player_health -= @enemy_attack3.damage.to_i
+    end
+    # @enemy.update(health: @enemy_health)
+  
+    # sleep 1
+    # @player.update(health: @player_health)  
+  end
+
+  def atkbtn1
+    atkmethod1
+    @enemy.update(health: @enemy_health)
+    @player.update(health: @player_health) 
+    refresh
+  end
+  def atkbtn2
+    atkmethod2
+    @enemy.update(health: @enemy_health)
+    @player.update(health: @player_health) 
+    refresh
+  end
+  def atkbtn3
+    atkmethod3
+    @enemy.update(health: @enemy_health)
+    @player.update(health: @player_health) 
+    refresh
+  end
+  
+  def refresh
+    redirect_to battle_path(@battle)
+  end
+  
+  def battle_start
+    p_attacks
+    e_attacks
+    @battle = Battle.find(params[:id])
+    @enemy = @battle.enemy
+    @enemy_health = @enemy.health
+    @player = @battle.player
+    @player_health = @player.health
   end
 
   def prize
     @battle = Battle.find(params[:id])
-    new_prize = "Ice Cream"
-    @battle.update(prize: new_prize)
+    # new_prize = Battle.prizes
+    if @battle.state == "WON"
+      @battle.update(prize: Battle.good_prize)
+    elsif @battle.state == "LOST"
+        @battle.update(prize: Battle.bad_prize)
+    end
     redirect_to stats_path(@battle)
   end
 
   def state
     @battle = Battle.find(params[:id])
     @battle.enemy.update(health: 100)
+    @battle.enemy.save
     @battle.player.update(health: 100)
+    @battle.player.save
   end
 
   def stats
     @battle = Battle.find(params[:id])
  
   end
+
+
   def allstats
     @battles = Battle.all
  
   end
+
+  def p_attacks
+    @battle = Battle.find(params[:id])
+    @player = @battle.player
+    # @player = Battle.player.find(params[:id])
+    @player_attacks = PlayerAttack.where(player_id: @player.id)
+    @p_attack_slots = []
+    Attack.all.select do |attack|
+      @player_attacks.select do |player_attack|
+          if attack.id === player_attack.attack_id 
+            @p_attack_slots << attack
+            # @player.update(attack_id: @attack_slots)
+          end
+        end 
+    end 
+    @p_attack_slots
+  end
+
+  def e_attacks
+    @battle = Battle.find(params[:id])
+    @enemy = @battle.enemy
+    # @enemy = Battle.enemy.find(params[:id])
+    @enemy_attacks = EnemyAttack.where(enemy_id: @enemy.id)
+    @e_attack_slots = []
+    Attack.all.select do |attack|
+      @enemy_attacks.select do |enemy_attack|
+          if attack.id === enemy_attack.attack_id 
+            @e_attack_slots << attack
+            # @player.update(attack_id: @attack_slots)
+          end
+        end 
+    end 
+    @e_attack_slots
+  end
+
+
+  def 
 
 
   def destroy
@@ -96,13 +253,5 @@ class BattlesController < ApplicationController
     def battle_params
       params.require(:battle).permit(:player_id, :enemy_id, :location_id)
     end
-  #   t.string "state"
-  #   t.string "prize"
-  #   t.integer "player_id"
-  #   t.integer "enemy_id"
-  #   t.integer "location_id"
-  #   t.integer "attack_id"
-  #   t.datetime "created_at", precision: 6, null: false
-  #   t.datetime "updated_at", precision: 6, null: false
-  # end
+
 end

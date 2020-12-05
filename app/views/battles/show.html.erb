@@ -14,7 +14,10 @@
 
     <div id="battle_page_player">
     <div id="player_health">
-        <%=@battle.player.attacks.name%>
+        <%# <%=@player_attack.name%>
+        <%# <%=@enemy_attack.name%> 
+ 
+    
        
 
                 <%= "#{@battle.player.name}"%>
@@ -36,7 +39,9 @@
 
 </div>
         <div id="attack_button">
-            <%= button_to "Attack", damage_path(@battle), method: "patch"%>
+            <%= button_to "#{@player_attack1.name}", atkbtn1_path(@battle), method: "patch"%>
+            <%= button_to "#{@player_attack2.name}", atkbtn2_path(@battle), method: "patch"%>
+            <%= button_to "#{@player_attack3.name}", atkbtn3_path(@battle), method: "patch"%>
         </div>
 
 
