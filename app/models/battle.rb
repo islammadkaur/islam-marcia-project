@@ -7,6 +7,7 @@ class Battle < ApplicationRecord
 
 
 
+
     # def damage
     #     find_damage = Attack.all.map do |attack|
     #         attack.damage

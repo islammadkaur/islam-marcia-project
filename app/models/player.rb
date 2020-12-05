@@ -63,6 +63,7 @@ class Player < ApplicationRecord
         player_attacks << get_attacks.sample(3)
         player_attacks
     end
+    
 
 
 end

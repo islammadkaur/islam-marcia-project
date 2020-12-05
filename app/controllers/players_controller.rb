@@ -67,6 +67,7 @@ class PlayersController < ApplicationController
 
 
       def attacks
+        @player = Player.find(params[:id])
         @player_attacks = PlayerAttack.where(player_id: @player.id)
         @attack_slots = []
 
@@ -74,11 +75,20 @@ class PlayersController < ApplicationController
           @player_attacks.select do |player_attack|
               if attack.id === player_attack.attack_id 
                 @attack_slots << attack
+                # @player.update(attack_id: @attack_slots)
               end
             end 
         end 
         @attack_slots
     end
+
+    def playerattacks
+      @player = Player.find(params[:id])
+      player_attacks = @attack_slots
+      allattacks = @player.attacks.player_attacks
+      allattacks
+    end
+
      
     
 

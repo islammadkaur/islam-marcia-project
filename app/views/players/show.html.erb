@@ -5,7 +5,7 @@
 <br>
     <h4>Attacks</h4>
     <br>
-    <%# <%= @player.attackname%> %>
+
 
 
 <%  @attack_slots.each do |player_attack| %>
@@ -26,6 +26,5 @@
 <%= button_to "Edit", edit_player_path(@player), method: "get"%>
 <br>
 <%= button_to "Delete", player_path(@player), method: "delete"%>
-<%# <%= button_to "Assign", attackassign_path(@player), method: "patch"%><br> %>
 <br>
 <%= link_to 'Go Back', players_path %><br>

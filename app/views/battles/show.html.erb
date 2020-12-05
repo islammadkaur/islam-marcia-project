@@ -14,6 +14,8 @@
 
     <div id="battle_page_player">
     <div id="player_health">
+        <%=@battle.player.attacks.name%>
+       
 
                 <%= "#{@battle.player.name}"%>
 
@@ -36,6 +38,7 @@
         <div id="attack_button">
             <%= button_to "Attack", damage_path(@battle), method: "patch"%>
         </div>
+
 
     <%# <%=@battle.damage%> 
     <%# <%=@battle.random.name%> 
