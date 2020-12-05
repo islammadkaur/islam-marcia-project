@@ -15,6 +15,9 @@ class Battle < ApplicationRecord
        
         find_damage.sample.to_i
     end
+    def prize
+        "Ice Cream"
+    end
 
  
 

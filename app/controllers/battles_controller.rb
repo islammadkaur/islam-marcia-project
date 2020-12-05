@@ -5,12 +5,12 @@ class BattlesController < ApplicationController
 
   def show
     @battle = Battle.find(params[:id])
-    @enemy = @battle.enemy
-    current_health = @enemy.health
-    @player = @battle.player
-    current_health1 = @player.health
-    if current_health == 0
-      redirect_to state_path(@player)
+    if @battle.enemy.health <= 0
+      @battle.update(state: "WON")
+      redirect_to state_path(@battle)
+    elsif @battle.player.health <= 0
+      @battle.update(state: "LOST")
+      redirect_to state_path(@battle)
     end
 
   end
@@ -60,11 +60,26 @@ class BattlesController < ApplicationController
     redirect_to battle_path(battle)
   end
 
+  def prize
+    @battle = Battle.find(params[:id])
+    new_prize = "Ice Cream"
+    @battle.update(prize: new_prize)
+    redirect_to stats_path(@battle)
+  end
+
   def state
     @battle = Battle.find(params[:id])
-    # if @battle.enemy.health <= 0
-    #   redirect_to
+    @battle.enemy.update(health: 100)
+    @battle.player.update(health: 100)
+  end
 
+  def stats
+    @battle = Battle.find(params[:id])
+ 
+  end
+  def allstats
+    @battles = Battle.all
+ 
   end
 
 

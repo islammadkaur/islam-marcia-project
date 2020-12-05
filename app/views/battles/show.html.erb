@@ -4,30 +4,38 @@
 <%# <img id="bank" src="https://cdn.shopify.com/s/files/1/0065/4917/6438/products/exterior-of-a-large-city-bank-background_4b909c43-363e-4274-b7c9-ee89aee86ee9_1200x1200.jpg?v=1549230870"> %>
 
 
+    <%# <img id="bank" src="https://i.redd.it/0bb6dqsiab451.gif"> %>
+
+
+    <h3 id="opponent"><%= "#{@battle.player.name} vs. #{@battle.enemy.name}"%></h4>
+
+
 <div id="battle_zone">
-    <img id="bank" src="https://i.redd.it/0bb6dqsiab451.gif">
+
     <div id="battle_page_player">
-<h3 id="opponent"><%= "#{@battle.player.name} vs. #{@battle.enemy.name}"%></h4>
+    <div id="player_health">
 
-        <%= "#{@battle.player.name}"%><br>
-        <%= "Health: #{@battle.player.health}"%><br>
-        <progress value = <%=@battle.player.health%> max = "100"></progress>
-        <img src="https://media0.giphy.com/media/ucNIl89MV9pS0/giphy.gif">
+                <%= "#{@battle.player.name}"%>
 
-        <%= button_to "Attack", damage_path(@battle), method: "patch"%>
+                <%= "Health: #{@battle.player.health}"%><br>
+                <progress value = <%=@battle.player.health%> max = "100"></progress>
+        </div>
+        <img src="https://media.giphy.com/media/65NSD5tkj9hmOeCbDM/giphy.gif">
     </div>
 
     <div id="battle_page_enemy">
-
-        <%= "#{@battle.enemy.name}"%><br>
-        <%= "Health: #{@battle.enemy.health}"%><br>
-        <progress value = <%= @battle.enemy.health%> max = "100"></progress>
+     <div id="enemy_health">
+            <%= "#{@battle.enemy.name}"%>
+            <%= "Health: #{@battle.enemy.health}"%><br>
+            <progress value = <%= @battle.enemy.health%> max = "100"></progress>
+        </div><br>
         <img src="https://media2.giphy.com/media/WtTn8vD7gnf2PwA6Ap/source.gif">
-
     </div>
 
 </div>
-
+        <div id="attack_button">
+            <%= button_to "Attack", damage_path(@battle), method: "patch"%>
+        </div>
 
     <%# <%=@battle.damage%> 
     <%# <%=@battle.random.name%> 

@@ -1,10 +1,6 @@
 <body id="winner">
 <%# <%find_state = []%>
-<% if @battle.enemy.health <= 0 %>
-<%@battle.state = "WON"%>
-<% elsif @battle.enemy.health > 0 %>
-<%@battle.state = "LOST"%>
-<%end%>
+
 
 
 <h1> <%="#{@battle.player.name.upcase} #{@battle.state}"%>!</h1>
@@ -12,8 +8,10 @@
 <%if @battle.state == "WON"%>
 <h1>Please collect your prize</h1>
 <img id ="ice_cream" src="https://cdn.streamelements.com/uploads/1ecd6fe8-da2b-4f63-ba71-414e86d4ad77.gif">
-<%= button_to "Collect Prize"%>
 <img id ="confetti" src="https://m.deskish.gertrud.io/public/c39640da7abe11e7a006001999c3efd7/ad6042db5fc74687a9d463ea75c0731e_thumb.gif" >
+<%= button_to "Collect Prize", prize_path(@battle), method: "patch"%>
+<%# <%= button_to "Attack", damage_path(@battle), method: "patch"%> 
+
 <%end%>
 
 <%if @battle.state == "LOST"%>
