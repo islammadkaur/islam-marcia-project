@@ -2,26 +2,244 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-//Player_Index-----------------------------------------------------------
+//Player_Index--------------------------------------------------------------------------------
 #player_index {
     background-image: url("main_bc.gif");
-    text-align: center;
+    text-align: left;
     width: auto;
     height: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
-    
 
-
-#player_index h1 {
+#player_index h4 {
     color: white;
-    text-align: center;
+    text-align: left;
+    border: 20px;
+}
+//-Button------------------------------------
+#player_index input {
+    border: none;
+    border-radius: 2px;
+    width: 170px;
+    height: 40px;
+    margin: 15px;
+    top: 350px;
+    background-color: rgb(216, 155, 64);
+    color: white;
+}
+
+#player_index input:hover {
+    background-color: #313a42;
+    color: rgb(0, 0, 0);
+}
+//-Links-------------------------------------
+#player_index a:visited {
+    color:  white;
+  }
+
+#player_index a:hover {
+    color: black;
+    background-color: rgb(216, 155, 64);
+  }
+
+#player_index a:link {
+    text-decoration: none;
+}
+
+//-Navigation Bar---------------------------
+#player_index ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #566573;
+  }
+
+  #player_index li {
+    float: left;
+  }
+
+  #player_index li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #566573;
+  }
+  
+  #player_index li a:hover {
+    background-color:  #313a42;
+    color: rgb(0, 0, 0);
+  }
+
+  #player_index .active {
+    background-color: rgb(216, 155, 64);
+    color: white;
+  }
+
+
+
+
+//Player_Show--------------------------------------------------------------------------------
+#player_show {
+    background-image: url("main_bc.gif");
+    text-align: left;
+    width: auto;
+    height: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#player_show h2 {
+    color: white;
+    text-align: left;
     border: 20px;
 }
 
-#player_index h2 {
+#player_show h4,p {
     color: #566573;
     text-align: left;
     border: 20px;
 }
 
-//Player_Show-----------------------------------------------------------
+//-Button------------------------------------
+#player_show input {
+    border: none;
+    border-radius: 2px;
+    float: left;
+    width: 120px;
+    height: 40px;
+    margin: 15px;
+    top: 350px;
+    background-color: rgb(216, 155, 64);
+    color: white;
+}
+
+#player_show input:hover {
+    background-color: #313a42;
+    color: rgb(0, 0, 0);
+}
+//-Links-------------------------------------
+#player_show a:visited {
+    color:  white;
+  }
+
+#player_show a:hover {
+    color: black;
+    background-color: rgb(216, 155, 64);
+  }
+
+#player_show a:link {
+    text-decoration: none;
+}
+
+//-Navigation Bar---------------------------
+#player_show ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #566573;
+  }
+
+  #player_show li {
+    float: left;
+  }
+
+  #player_show li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #566573;
+  }
+  
+  #player_show li a:hover {
+    background-color:  #313a42;
+    color: rgb(0, 0, 0);
+  }
+
+  #player_show .active {
+    background-color: rgb(216, 155, 64);
+    color: white;
+  }
+
+
+  //Player_Form--------------------------------------------------------------------------------
+#player_form {
+    background-image: url("main_bc.gif");
+    text-align: left;
+    width: auto;
+    height: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#player_form h2,label {
+    color: white;
+    text-align: left;
+    border: 20px;
+}
+
+#player_form h4,p {
+    color: #566573;
+    text-align: left;
+    border: 20px;
+}
+
+//-Button------------------------------------
+#player_form input {
+    border: none;
+    width: 200px;
+    height: 40px;
+    top: 350px;
+    background-color: rgb(216, 155, 64);
+    color: white;
+}
+
+#player_form input:hover {
+    background-color: #313a42;
+    color: rgb(0, 0, 0);
+}
+//-Links-------------------------------------
+#player_form a:visited {
+    color:  white;
+  }
+
+#player_form a:hover {
+    color: black;
+    background-color: rgb(216, 155, 64);
+  }
+
+#player_form a:link {
+    text-decoration: none;
+}
+
+//-Navigation Bar---------------------------
+#player_form ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #566573;
+  }
+
+  #player_form li {
+    float: left;
+  }
+
+  #player_form li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #566573;
+  }
+  
+  #player_form li a:hover {
+    background-color:  #313a42;
+    color: rgb(0, 0, 0);
+  }
+
+  #player_form .active {
+    background-color: rgb(216, 155, 64);
+    color: white;
+  }

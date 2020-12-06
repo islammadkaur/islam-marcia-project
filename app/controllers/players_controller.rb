@@ -7,6 +7,9 @@ class PlayersController < ApplicationController
 
       def show
         @player = Player.find(params[:id])
+        # @attack = @player.attack
+        # current_attacks = @attack.name
+
         attacks
       end
 
@@ -19,7 +22,7 @@ class PlayersController < ApplicationController
       def create
         @player = Player.new(player_params.merge(health: 100))
           if @player.save
-            3.times do |attack|
+            4.times do |attack|
               random_attack = Attack.all.sample
               PlayerAttack.create(player_id: @player.id, attack_id: random_attack.id)
           end
@@ -28,7 +31,6 @@ class PlayersController < ApplicationController
           render :new
         end
       end
-  
 
       def edit
         @player = Player.find(params[:id])
@@ -55,6 +57,7 @@ class PlayersController < ApplicationController
 
 
       def attacks
+        @player = Player.find(params[:id])
         @player_attacks = PlayerAttack.where(player_id: @player.id)
         @attack_slots = []
 
@@ -62,11 +65,20 @@ class PlayersController < ApplicationController
           @player_attacks.select do |player_attack|
               if attack.id === player_attack.attack_id 
                 @attack_slots << attack
+                # @player.update(attack_id: @attack_slots)
               end
             end 
         end 
         @attack_slots
     end
+
+    def playerattacks
+      @player = Player.find(params[:id])
+      player_attacks = @attack_slots
+      allattacks = @player.attacks.player_attacks
+      allattacks
+    end
+
      
     
 

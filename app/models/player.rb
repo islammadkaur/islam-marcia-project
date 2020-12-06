@@ -51,5 +51,18 @@ class Player < ApplicationRecord
         # end
     end
 
+    def attackname
+        player_attacks = []
+        find_player = Player.all.find do |player|
+            player == self
+        end
+        get_attacks = Attack.all.map do |attack|
+            attack.name
+        end
+        player_attacks << get_attacks.sample(3)
+        player_attacks
+    end
+    
+
 
 end

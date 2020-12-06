@@ -1,28 +1,31 @@
 <body id="player_show">
 
-<h1><%= @player.name%></h1>
-<h1><%= @player.health%></h1>
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/players">Go Back</a></li>
+</ul>
+
+<h2>Player: <%= @player.name%></h2>
+<h2>Health: <%= @player.health%></h2>
 <br>
-    <h4>Attacks</h4>
+    <h4>Attack Slots</h4>
+
 
 <%  @attack_slots.each do |player_attack| %>
-    <ul>
-        <li>
+    <div>
+        <p>
             <%= player_attack.name%>
             <br>
             Attack type: <%= player_attack.attack_type%>
             <br>
             Target: <%= player_attack.target%>
             <br>
-        </li>
-    </ul>
+            <br>
+        </p>
+    </div>
 <%end%>
 
 
 
 <%= button_to "Edit", edit_player_path(@player), method: "get"%>
-<br>
 <%= button_to "Delete", player_path(@player), method: "delete"%>
-<br>
-<br>
-<%= link_to 'Go Back', players_path %><br>

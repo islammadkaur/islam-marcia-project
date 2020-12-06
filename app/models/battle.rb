@@ -4,6 +4,9 @@ class Battle < ApplicationRecord
     belongs_to :location
 
 
+
+
+
     # def damage
     #     find_damage = Attack.all.map do |attack|
     #         attack.damage
@@ -13,31 +16,47 @@ class Battle < ApplicationRecord
     #     find_damage.sample.to_i
     # end
 
-    def damage
-        find_damage = Attack.all.map do |attack|
-            attack.damage
-        end
-        # find_name = Attack.all.map do |attack|
-        #     attack.name
-        # end
+    # def damage
+    #     find_damage = Attack.all.map do |attack|
+    #         attack.damage
+    #     end
+    #     # find_name = Attack.all.map do |attack|
+    #     #     attack.name
+    #     # end
        
-        find_damage.sample.to_i
-    end
+    #     find_damage.sample.to_i
+    # end
+
+    
+    # def prize
+def self.good_prize
+       good_prize_array = ["Ice Cream", "Pizza Party", "Vodka", "Pat On The Back", "Validation", "Pile Of Garbage", "Our Approval", "Half Eaten Sandwich"]
+       good_prize_array.sample
+end
+def self.bad_prize
+       bad_prize_array = ["Your Dignity", "Our Respect", "Your Friends", "Your Burrito", "Everything"]
+       bad_prize_array.sample
+end
 
  
 
     def winner
-        find_state = Battle.all.map do |battle|
-            battle.state
-        end
-        find_enemy = Enemy.all.map do |enemy|
-            enemy.health
-        end
-        if find_enemy = 0
-          find_state = "WON"
-        else
-          find_state = "LOST"
-        end
+        # find_state = []
+        # enemy = Battle.all.map do |enemy|
+        #     enemy.enemy
+        # end
+        # enemy_health = enemy.find do |enemy|
+        #     enemy.health
+        # end
+        
+        # health = enemy_health.health
+        #     if health < 0
+        #         find_state = "WON" 
+        #     end
+        #     if health > 0
+        #         find_state = "LOST" 
+        #     end
+        
     end
 
     def random
@@ -56,33 +75,6 @@ class Battle < ApplicationRecord
         end
         find_name
     end
-    # def attackid
-    #     find_id = Attack.all.map do |battle|
-    #         battle.id
-    #     end
-    #     id_to_string = find_id.join(', ')
-    # end
 
-
-    # def attacker
-    #     attacksample.map do |attack|
-    #         attack.name
-    #     end
-    # end
-
-    # def attackname
-
-    #     name = attacksample.name
-    # end
-
-    # def attackdamage
-    #     attacksample.damage
-    # end
-
-    # # def arg(damage, attackname)
-    # #     arg(damage, attackname).sample
-    # end
 
 end
-
-
