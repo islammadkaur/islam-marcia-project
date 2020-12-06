@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
       def create
         @player = Player.new(player_params.merge(health: 100))
           if @player.save
-            3.times do |attack|
+            4.times do |attack|
               random_attack = Attack.all.sample
               PlayerAttack.create(player_id: @player.id, attack_id: random_attack.id)
           end

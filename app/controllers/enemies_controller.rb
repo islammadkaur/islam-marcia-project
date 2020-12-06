@@ -19,7 +19,7 @@ class EnemiesController < ApplicationController
       def create
         @enemy = Enemy.new(enemy_params.merge(health: 100))
         if @enemy.save
-            3.times do |attack|
+            4.times do |attack|
               random_attack = Attack.all.sample
               EnemyAttack.create(enemy_id: @enemy.id, attack_id: random_attack.id)
           end

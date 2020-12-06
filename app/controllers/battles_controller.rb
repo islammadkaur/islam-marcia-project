@@ -11,6 +11,7 @@ class BattlesController < ApplicationController
     atkmethod1
     atkmethod2
     atkmethod3
+    atkmethod4
 
     if @battle.enemy.health <= 0
       @battle.update(state: "WON")
@@ -52,91 +53,126 @@ class BattlesController < ApplicationController
     @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
-    battle_start
-    
     @player_attack1 = @p_attack_slots[0]
     @enemy_attack1 = @e_attack_slots[0]
+    battle_start
+    p_damage = @player_attack1.damage.to_i
+    e_damage = @enemy_attack1.damage.to_i
 
-    if @player_attack1.attack_type == @battle.location.location_type
-      @player_attack1.damage.to_i + 20
+    if @player_attack1.target == "Self" && @player_attack1.attack_type == @battle.location.location_type
+      @player_health -= p_damage + 20
+    elsif @player_attack1.target == "Opponent" && @player_attack1.attack_type == @battle.location.location_type
+      @enemy_health -= p_damage + 20
+    elsif @player_attack1.target == "Self" && @player_attack1.attack_type != @battle.location.location_type
+      @player_health -= p_damage
+    elsif @player_attack1.target == "Opponent" && @player_attack1.attack_type != @battle.location.location_type
+      @enemy_health -= p_damage
     end
 
-    if @player_attack1.target == "Self"
-      @player_health -= @player_attack1.damage.to_i
-    else
-      @enemy_health -= @player_attack1.damage.to_i
-    end
-    if @enemy_attack1.target == "Self"
-      @enemy_health -= @enemy_attack1.damage.to_i
-    else
-      @player_health -= @enemy_attack1.damage.to_i
-    end
-    
-    
-    
-    # @enemy.update(health: @enemy_health)
-  
-    # sleep 1
-    # @player.update(health: @player_health)  
+    if @enemy_attack1.target == "Self" && @enemy_attack1.attack_type == @battle.location.location_type
+      @enemy_health -= e_damage + 20
+    elsif @enemy_attack1.target == "Opponent" && @enemy_attack1.attack_type == @battle.location.location_type
+      @player_health -= e_damage + 20
+    elsif @enemy_attack1.target == "Self" && @enemy_attack1.attack_type != @battle.location.location_type
+      @enemy_health -= e_damage
+    elsif @enemy_attack1.target == "Opponent" && @enemy_attack1.attack_type != @battle.location.location_type
+      @player_health -= e_damage
+    end  
+
   end
 
   def atkmethod2
     @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
-    battle_start
-    
-
-    
     @player_attack2 = @p_attack_slots[1]
     @enemy_attack2 = @e_attack_slots[1]
+    battle_start
+    p_damage = @player_attack2.damage.to_i
+    e_damage = @enemy_attack2.damage.to_i
 
-    if @player_attack2.attack_type == @battle.location.location_type
-      @player_attack2.damage.to_i + 20
+    if @player_attack2.target == "Self" && @player_attack2.attack_type == @battle.location.location_type
+      @player_health -= p_damage + 20
+    elsif @player_attack2.target == "Opponent" && @player_attack2.attack_type == @battle.location.location_type
+      @enemy_health -= p_damage + 20
+    elsif @player_attack2.target == "Self" && @player_attack2.attack_type != @battle.location.location_type
+      @player_health -= p_damage
+    elsif @player_attack2.target == "Opponent" && @player_attack2.attack_type != @battle.location.location_type
+      @enemy_health -= p_damage
     end
 
-    if @player_attack2.target == "Self"
-      @player_health -= @player_attack2.damage.to_i
-    else
-      @enemy_health -= @player_attack2.damage.to_i
+    if @enemy_attack2.target == "Self" && @enemy_attack2.attack_type == @battle.location.location_type
+      @enemy_health -= e_damage + 20
+    elsif @enemy_attack2.target == "Opponent" && @enemy_attack2.attack_type == @battle.location.location_type
+      @player_health -= e_damage + 20
+    elsif @enemy_attack2.target == "Self" && @enemy_attack2.attack_type != @battle.location.location_type
+      @enemy_health -= e_damage
+    elsif @enemy_attack2.target == "Opponent" && @enemy_attack2.attack_type != @battle.location.location_type
+      @player_health -= e_damage
     end
-    if @enemy_attack2.target == "Self"
-      @enemy_health -= @enemy_attack2.damage.to_i
-    else
-      @player_health -= @enemy_attack2.damage.to_i
-    end
-    
 
-
-    # @enemy.update(health: @enemy_health)
-  
-    # sleep 1
-    # @player.update(health: @player_health)  
   end
 
   def atkmethod3
     @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
-    battle_start
-    
     @player_attack3 = @p_attack_slots[2]
     @enemy_attack3 = @e_attack_slots[2]
-    
-    if @player_attack3.target == "Self"
-      @player_health -= @player_attack3.damage.to_i
-    else
-      @enemy_health -= @player_attack3.damage.to_i
+    battle_start
+    p_damage = @player_attack3.damage.to_i
+    e_damage = @enemy_attack3.damage.to_i
+
+    if @player_attack3.target == "Self" && @player_attack3.attack_type == @battle.location.location_type
+      @player_health -= p_damage + 20
+    elsif @player_attack3.target == "Opponent" && @player_attack3.attack_type == @battle.location.location_type
+      @enemy_health -= p_damage + 20
+    elsif @player_attack3.target == "Self" && @player_attack3.attack_type != @battle.location.location_type
+      @player_health -= p_damage
+    elsif @player_attack3.target == "Opponent" && @player_attack3.attack_type != @battle.location.location_type
+      @enemy_health -= p_damage
     end
-    if @enemy_attack3.target == "Self"
-      @enemy_health -= @enemy_attack3.damage.to_i
-    else
-      @player_health -= @enemy_attack3.damage.to_i
+
+    if @enemy_attack3.target == "Self" && @enemy_attack3.attack_type == @battle.location.location_type
+      @enemy_health -= e_damage + 20
+    elsif @enemy_attack3.target == "Opponent" && @enemy_attack3.attack_type == @battle.location.location_type
+      @player_health -= e_damage + 20
+    elsif @enemy_attack3.target == "Self" && @enemy_attack3.attack_type != @battle.location.location_type
+      @enemy_health -= e_damage
+    elsif @enemy_attack3.target == "Opponent" && @enemy_attack3.attack_type != @battle.location.location_type
+      @player_health -= e_damage
+    end 
+  end
+
+  def atkmethod4
+    @battle = Battle.find(params[:id])
+    p_attacks
+    e_attacks
+    @player_attack4 = @p_attack_slots[3]
+    @enemy_attack4 = @e_attack_slots[3]
+    battle_start
+    p_damage = @player_attack4.damage.to_i
+    e_damage = @enemy_attack4.damage.to_i
+
+    if @player_attack4.target == "Self" && @player_attack4.attack_type == @battle.location.location_type
+      @player_health -= p_damage + 20
+    elsif @player_attack4.target == "Opponent" && @player_attack4.attack_type == @battle.location.location_type
+      @enemy_health -= p_damage + 20
+    elsif @player_attack4.target == "Self" && @player_attack4.attack_type != @battle.location.location_type
+      @player_health -= p_damage
+    elsif @player_attack4.target == "Opponent" && @player_attack4.attack_type != @battle.location.location_type
+      @enemy_health -= p_damage
     end
-    # @enemy.update(health: @enemy_health)
-  
-    # sleep 1
-    # @player.update(health: @player_health)  
+
+    if @enemy_attack4.target == "Self" && @enemy_attack4.attack_type == @battle.location.location_type
+      @enemy_health -= e_damage + 20
+    elsif @enemy_attack4.target == "Opponent" && @enemy_attack4.attack_type == @battle.location.location_type
+      @player_health -= e_damage + 20
+    elsif @enemy_attack4.target == "Self" && @enemy_attack4.attack_type != @battle.location.location_type
+      @enemy_health -= e_damage
+    elsif @enemy_attack4.target == "Opponent" && @enemy_attack4.attack_type != @battle.location.location_type
+      @player_health -= e_damage
+    end 
   end
 
   def atkbtn1
@@ -153,6 +189,12 @@ class BattlesController < ApplicationController
   end
   def atkbtn3
     atkmethod3
+    @enemy.update(health: @enemy_health)
+    @player.update(health: @player_health) 
+    refresh
+  end
+  def atkbtn4
+    atkmethod4
     @enemy.update(health: @enemy_health)
     @player.update(health: @player_health) 
     refresh
