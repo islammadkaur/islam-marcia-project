@@ -4,7 +4,8 @@
 
 //Player_Index--------------------------------------------------------------------------------
 #player_index {
-    background-image: url("main_bc.gif");
+    background-color: rgb(228, 227, 227);
+    background-size: cover;
     text-align: left;
     width: auto;
     height: auto;
@@ -39,7 +40,7 @@
 
 #player_index a:hover {
     color: black;
-    background-color: rgb(216, 155, 64);
+    background-color:rgb(219, 115, 29);
   }
 
 #player_index a:link {
@@ -72,17 +73,11 @@
     color: rgb(0, 0, 0);
   }
 
-  #player_index .active {
-    background-color: rgb(216, 155, 64);
-    color: white;
-  }
-
-
 
 
 //Player_Show--------------------------------------------------------------------------------
 #player_show {
-    background-image: url("main_bc.gif");
+  background-color: rgb(228, 227, 227);
     text-align: left;
     width: auto;
     height: auto;
@@ -110,16 +105,21 @@
     height: 40px;
     margin: 15px;
     top: 350px;
-    background-color: rgb(216, 155, 64);
-    color: white;
+    background-color: rgb(219, 115, 29);
+    color:rgb(248, 202, 164);
 }
 
 #player_show input:hover {
-    background-color: #313a42;
-    color: rgb(0, 0, 0);
+    background-color: rgb(146, 66, 0);
+    color: rgb(248, 202, 164);
 }
+
 //-Links-------------------------------------
 #player_show a:visited {
+    color:  white;
+  }
+
+  #player_show a{
     color:  white;
   }
 
@@ -130,6 +130,12 @@
 
 #player_show a:link {
     text-decoration: none;
+}
+//-Image---------------------------
+#player_show img {
+  width: auto;
+  height: auto;
+  position: center;
 }
 
 //-Navigation Bar---------------------------
@@ -166,7 +172,7 @@
 
   //Player_Form--------------------------------------------------------------------------------
 #player_form {
-    background-image: url("main_bc.gif");
+    background-color: rgb(228, 227, 227);
     text-align: left;
     width: auto;
     height: auto;
@@ -191,13 +197,13 @@
     width: 200px;
     height: 40px;
     top: 350px;
-    background-color: rgb(216, 155, 64);
-    color: white;
+    background-color: rgb(219, 115, 29);
+    color:rgb(248, 202, 164);
 }
 
 #player_form input:hover {
-    background-color: #313a42;
-    color: rgb(0, 0, 0);
+  background-color: rgb(146, 66, 0);
+  color: rgb(248, 202, 164);
 }
 //-Links-------------------------------------
 #player_form a:visited {

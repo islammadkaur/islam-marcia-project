@@ -10,7 +10,6 @@
 <br>
     <h4>Attack Slots</h4>
 
-
 <%  @attack_slots.each do |player_attack| %>
     <div>
         <p>
@@ -19,6 +18,8 @@
             Attack type: <%= player_attack.attack_type%>
             <br>
             Target: <%= player_attack.target%>
+            <br>
+            Damage: <%= player_attack.damage%>
             <br>
             <br>
         </p>
@@ -29,3 +30,4 @@
 
 <%= button_to "Edit", edit_player_path(@player), method: "get"%>
 <%= button_to "Delete", player_path(@player), method: "delete"%>
+</body>

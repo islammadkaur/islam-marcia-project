@@ -3,10 +3,6 @@ class LocationsController < ApplicationController
         @locations = Location.all
       end
     
-      def show
-        @location = Location.find(params[:id])
-      end
-    
       def new
         @location = Location.new
       end
@@ -14,7 +10,7 @@ class LocationsController < ApplicationController
       def create
         @location = Location.new(location_params)
         if @location.save
-          redirect_to location_path(@location)
+          redirect_to locations_path
         else
           render :new
         end
@@ -27,7 +23,7 @@ class LocationsController < ApplicationController
       def update
           @location = Location.find(params[:id])
           if @location.update(location_params)
-            redirect_to location_path(@location)
+            redirect_to locations_path
           else
             render :edit
           end

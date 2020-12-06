@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :locations
+  resources :locations, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :attacks
   resources :enemies
   resources :players

@@ -1,5 +1,11 @@
+<body id="player_form">
 
-<h1>Enemy Editor</h1>
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/enemies/">Go Back</a></li>
+</ul>
+
+<h2>Enemy Editor</h2>
 
 <%if @enemy.errors.any? %>
 <h4 style="color: #5DADE2">Errors</h4>
@@ -16,20 +22,21 @@
     <%= f.text_field :name %>
     <br>
         <%  @attack_slots.each do |enemy_attack| %>
-    <ul>
-        <li>
+    <div>
+        <p>
             <%= enemy_attack.name%>
             <br>
             Attack type: <%= enemy_attack.attack_type%>
             <br>
             Target: <%= enemy_attack.target%>
             <br>
-        </li>
-    </ul>
+            <br>
+        </p>
+    </div>
         <%end%>
+        <br>
+        <br>
     <%= f.submit%>
     <% end %>
     
-
-<br>
-<%= link_to 'Go Back', enemies_path %><br>
+</body>

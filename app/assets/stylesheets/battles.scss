@@ -6,8 +6,11 @@
 #battle_index {
 
     // background-image: linear-gradient(rgb(30, 4, 78), rgb(158, 45, 143), rgba(230, 219, 66, 0.315), url("main_bc.gif"));
-    background: url("main_bc.gif");
+    // background: url("main_bc.gif"); https://i.redd.it/0bb6dqsiab451.gif  https://media.giphy.com/media/t74HSTS5I0F0Y/giphy.gif
+    background: url("https://media.giphy.com/media/26n6EEuaqjQIQQXyU/giphy.gif");
     background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
     text-align: center;
     width: auto;
     height: auto;
@@ -15,7 +18,7 @@
 }
     
 #battle_index h1 {
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     border: 20px;
     
@@ -28,7 +31,7 @@
 }
 
 #battle_index h4 {
-    color: #858585;
+    color: #383838;
     text-align: center;
     border: 20px;
 }
@@ -38,7 +41,37 @@
     margin: 0;
     padding: 0;
   }
+  //-Navigation Bar---------------------------
+#battle_index ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #566573;
+  }
 
+  #battle_index li {
+    float: left;
+  }
+
+  #battle_index li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #566573;
+  }
+  
+  #battle_index li a:hover {
+    background-color:  #313a42;
+    color: rgb(0, 0, 0);
+  }
+
+  #battle_index .active {
+    background-color: rgb(216, 155, 64);
+    color: white;
+  }
+//-Button------------------------------------
   #battle_index input {
     border: none;
     border-radius: 2px;
@@ -46,13 +79,13 @@
     height: 40px;
     margin: 15px;
     top: 350px;
-    background-color: rgb(216, 155, 64);
-    color: white;
+    background-color: rgb(219, 115, 29);
+    color: rgb(248, 202, 164);
 }
 
 #battle_index input:hover {
-    background-color: #313a42;
-    color: rgb(0, 0, 0);
+    background-color: rgb(146, 66, 0);
+    color: rgb(248, 202, 164);
 }
 
 //Battle_New------------------------------------------------------------
