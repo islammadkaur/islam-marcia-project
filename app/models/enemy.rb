@@ -1,7 +1,8 @@
 class Enemy < ApplicationRecord
     has_many :battles
-    has_many :attacks
+    has_many :attacks, through: :enemy_attacks
     has_many :locations, through: :battles
+    has_many :players, through: :battles
     has_many :players, through: :battles
 
     validates :name, presence: true, uniqueness: true

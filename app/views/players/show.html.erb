@@ -2,14 +2,29 @@
 
 <h1><%= @player.name%></h1>
 <h1><%= @player.health%></h1>
+<br>
     <h4>Attacks</h4>
     <br>
+
+
+
+<%  @attack_slots.each do |player_attack| %>
+    <ul>
+        <li>
+            <%= player_attack.name%>
+            <br>
+            Attack type: <%= player_attack.attack_type%>
+            <br>
+            Target: <%= player_attack.target%>
+            <br>
+        </li>
+    </ul>
+<%end%>
 
 
 
 <%= button_to "Edit", edit_player_path(@player), method: "get"%>
 <br>
 <%= button_to "Delete", player_path(@player), method: "delete"%>
-<br>
 <br>
 <%= link_to 'Go Back', players_path %><br>

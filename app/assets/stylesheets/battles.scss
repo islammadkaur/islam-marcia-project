@@ -89,6 +89,7 @@ select#battle_enemy_id {
     width: 50%;
     height: 500px;
     position: relative;
+    margin-top: 11%;
 
 }
 #battle_page_enemy {
@@ -96,6 +97,8 @@ select#battle_enemy_id {
     width: 50%;
     height: 100px;
     position: relative;
+    margin-top: 11%;
+
 
 }
 
@@ -108,4 +111,124 @@ img {
   display: block;
 
 }
+
+img#confetti {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+img#lost {
+    width: 40%;
+    height: 40%;
+    position: relative;
+}
+img#fire {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#winner h1 {
+    color: white;
+    text-align: center;
+}
+
+#winner {
+    background-color: #1b1b1b;
+}
+
+img#ice_cream {
+    margin-left: 30%;
+    margin-right: 30%;
+    bottom: 40%;
+    // margin: auto;
+    width: 40%;
+    position: absolute;
+}
+
+#winner input {
+    background-color: rgb(41, 169, 173);
+    top: 600px;
+    margin-left: 35%;
+    margin-right: 35%;
+    // margin: auto;
+    width: 30%;
+    height: 6%;
+    position: absolute;
+    font-size: 20px;
+}
+
+#opponent {
+    color: rgb(255, 255, 255);
+    background-color: rgb(230, 114, 61);
+    height: 25px;
+    width: 30%;
+    // top: 0%;
+    padding: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+    // position: relative;
+}
+
+#battle_show input {
+    background-color: rgb(42, 5, 109);
+    color: white;
+    font-size: 20px;
+    width: 25%;
+    height: 50px;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 0%;
+    position: relative;
+}
+
+// #battle_show #bank {
+//     width: 100%;
+//     height: 100%;
+//     padding: 0%;
+//     margin: 0%;
+//     // right: 10%;
+//     position: absolute;
+// }
+
+#battle_show {
+    background-repeat: no-repeat;
+    background-image: url("https://i.redd.it/0bb6dqsiab451.gif");
+background-size: 100%;
+}
+
+#player_health {
+    color: rgb(209, 97, 46);
+    text-align: center;
+    width: 100%;
+    // margin-right: 10%;
+    // margin-left: 10%;
+    // float: right;
+    position: relative;
+    // border: 15px white;
+}
+
+#enemy_health {
+    color: rgb(209, 97, 46);
+    text-align: center;
+    width: 100%;
+    // margin-right: 10%;
+    // margin-left: 10%;
+    // float: right;
+    position: relative;
+}
+
+progress {
+    background-color: green;
+    color: red;
+    width: 30%;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+
+
 

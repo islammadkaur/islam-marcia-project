@@ -15,9 +15,19 @@
     <br>
     <%= f.text_field :name %>
     <br>
-    <br>
+        <%  @attack_slots.each do |enemy_attack| %>
+    <ul>
+        <li>
+            <%= enemy_attack.name%>
+            <br>
+            Attack type: <%= enemy_attack.attack_type%>
+            <br>
+            Target: <%= enemy_attack.target%>
+            <br>
+        </li>
+    </ul>
+        <%end%>
     <%= f.submit%>
-
     <% end %>
     
 
