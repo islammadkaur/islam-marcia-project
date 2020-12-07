@@ -128,6 +128,7 @@ img#fire {
     position: absolute;
 }
 
+
 #winner h1 {
     color: white;
     text-align: center;
@@ -160,7 +161,7 @@ img#ice_cream {
 
 #opponent {
     color: rgb(255, 255, 255);
-    background-color: rgb(230, 114, 61);
+    background-color: rgb(228, 84, 185);
     height: 25px;
     width: 30%;
     // top: 0%;
@@ -177,10 +178,56 @@ img#ice_cream {
     font-size: 20px;
     width: 25%;
     height: 50px;
-    margin-left: 38%;
-    margin-right: 38%;
-    margin-top: 0%;
-    position: relative;
+    // float: left;
+    // // margin-left: 18%;
+    // // margin-right: 38%;
+    // margin-top: 0%;
+    // position: relative;
+}
+
+#attack_button1 {
+    position: absolute;
+    float: left;
+    width: 80%;
+    display: block;
+    top: 80%;
+    left: 5%;
+}
+#attack_button2 {
+    position: absolute;
+    float: left;
+    width: 80%;
+    display: block;
+    left: 25%;
+    top: 80%;
+}
+#attack_button3 {
+    position: absolute;
+    float: left;
+    width: 80%;
+    display: block;
+    top: 85%;
+    left: 5%;
+
+}
+#attack_button4 {
+    position: absolute;
+    float: left;
+    width: 80%;
+    display: block;
+    left: 25%;
+    top: 85%;
+}
+#battle_show input:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(67, 0, 192);
+    // font-size: 20px;
+    // width: 25%;
+    // height: 50px;
+    // margin-left: 38%;
+    // margin-right: 38%;
+    // margin-top: 0%;
+    // position: relative;
 }
 
 // #battle_show #bank {
@@ -194,7 +241,7 @@ img#ice_cream {
 
 #battle_show {
     background-repeat: no-repeat;
-    background-image: url("https://i.redd.it/0bb6dqsiab451.gif");
+    background-image: url("/assets/fight_bg.gif");
 background-size: 100%;
 }
 
@@ -228,6 +275,44 @@ progress {
 h3 {
     text-decoration: underline;
 }
+
+#battle_stat {
+    background-repeat: no-repeat;
+    background-image: url("/assets/stat_bg4.gif");
+    background-size: 100%;
+}
+
+#battle_stat_info {
+    // color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.466);
+    background-size: 50%;
+    width: 50%;
+    height: 400px;
+    margin-left: 25%;
+    margin-top: 17%;
+}
+
+#stat_text  {
+    color: rgb(0, 0, 0);
+
+    padding-top: 10px;
+}
+
+#stats_underline {
+    text-decoration: underline;
+}
+
+#player_image {
+    width: 100%;
+    height: 750px;
+    margin-top: 0%;
+    position: absolute;
+}
+
+
+
+
 
 
 

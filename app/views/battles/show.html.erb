@@ -1,3 +1,19 @@
+<head> 
+ <script> 
+
+function after()
+{
+var img = document.getElementById("player_image");
+img.src="/assets/punch.gif";
+// sleep(5000);
+// setTimeout(() => {
+    
+// }, timeout);
+}
+
+</script> 
+
+</head>
 
 <body id="battle_show">
 
@@ -14,18 +30,14 @@
 
     <div id="battle_page_player">
     <div id="player_health">
-        <%# <%=@player_attack.name%>
-        <%# <%=@enemy_attack.name%> 
- 
-    
-       
 
                 <%= "#{@battle.player.name}"%>
 
                 <%= "Health: #{@battle.player.health}"%><br>
                 <progress value = <%=@battle.player.health%> max = "100"></progress>
         </div>
-        <img src="https://media.giphy.com/media/65NSD5tkj9hmOeCbDM/giphy.gif">
+
+
     </div>
 
     <div id="battle_page_enemy">
@@ -34,21 +46,29 @@
             <%= "Health: #{@battle.enemy.health}"%><br>
             <progress value = <%= @battle.enemy.health%> max = "100"></progress>
         </div><br>
-        <img src="https://media2.giphy.com/media/WtTn8vD7gnf2PwA6Ap/source.gif">
+        <%# <img src="/assets/enemy_stand_by.gif"> %>
     </div>
 
+        <img id="player_image" src="/assets/default_battle.gif">
 </div>
-        <div id="attack_button">
-            <%= button_to "#{@player_attack1.name}", atkbtn1_path(@battle), method: "patch"%>
-            <%= button_to "#{@player_attack2.name}", atkbtn2_path(@battle), method: "patch"%>
-            <%= button_to "#{@player_attack3.name}", atkbtn3_path(@battle), method: "patch"%>
-            <%= button_to "#{@player_attack4.name}", atkbtn4_path(@battle), method: "patch"%>
-        </div>
+            <div id="attack_button1">
+                <%= button_to "#{@player_attack1.name}", atkbtn1_path(@battle), method: "patch", onclick: "after()" %>
+            </div>
+
+            <div id="attack_button2">
+                <%= button_to "#{@player_attack2.name}", atkbtn2_path(@battle), method: "patch", onclick: "after()"%>
+            </div>
+
+            <div id="attack_button3">
+                <%= button_to "#{@player_attack3.name}", atkbtn3_path(@battle), method: "patch", onclick: "after()"%>
+            </div>
+
+            <div id="attack_button4">
+                <%= button_to "#{@player_attack4.name}", atkbtn4_path(@battle), method: "patch", onclick: "after()"%>
+            </div>
 
 
-    <%# <%=@battle.damage%> 
-    <%# <%=@battle.random.name%> 
-    <%# <%=@battle.random.damage%> 
+
 
 
      

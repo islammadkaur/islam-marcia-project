@@ -6,6 +6,7 @@
 <br>
 <h2 style="color: #566573">Main Menu</h2>
 
+
 <ul>
     <li>
         <h4 style="color: #5DADE2">Start a Battle 
@@ -46,7 +47,12 @@
     <li>
         <h4 style="color: #5DADE2">Stats
             <%= button_to "Stats", "/battles/1/allstats", method: "get"%>
+            <%= button_to "Stats", "/players/24/create_player", method: "patch"%>
         </h4> 
     </li>
 
 </ul>
+
+<audio controls>
+  <source src=“/assets/feels.mp3”>
+</audio>

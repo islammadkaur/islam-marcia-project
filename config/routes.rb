@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get 'battles/:id/stats', to: "battles#stats", as: "stats"
   get 'battles/:id/allstats', to: "battles#allstats", as: "allstats"
   patch 'battles/:id/prize', to: "battles#prize", as: "prize"
+  patch 'battles/:id/lost', to: "battles#lost", as: "lost"
   # patch 'players/:id/attackassign', to: "players#attackassign", as: "attackassign"
 end
