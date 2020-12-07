@@ -82,8 +82,6 @@ class PlayersController < ApplicationController
 
     def create_player
       @player = Player.new(name: "#{Player.generate_name}", health: 100)
-      # self.name = Player.generate_name
-      # self.health = 100
       @player.save
 
         4.times do |attack|

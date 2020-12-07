@@ -1,5 +1,11 @@
 <body id="battle_index">
 
+<%# <audio controls autoplay loop>
+  <source src="/assets/bensound-scifi.mp3" type="audio/mpeg">
+</audio> %>
+
+<audio src="/assets/bensound-scifi.mp3" autoplay></audio>
+
 <ul>
   <li><a href="/players/new?">Create Player</a></li>
   <li><a href="/enemies/new?">Create Enemy</a></li>
@@ -8,7 +14,7 @@
 </ul>
 
 
-<h1>Game Title</h1>
+<h1>Neon Strikes</h1>
 <br>
 <h2>Main Menu</h2>
 
@@ -44,7 +50,7 @@
     
 
         <h4>Stats
-            <%= button_to "Stats", "/battles/1/allstats", method: "get"%>
+            <%= button_to "Stats", "/battles/24/allstats", method: "get"%>
         </h4> 
     
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   patch 'battles/:id/atkbtn2', to: "battles#atkbtn2", as: "atkbtn2"
   patch 'battles/:id/atkbtn3', to: "battles#atkbtn3", as: "atkbtn3"
   patch 'battles/:id/atkbtn4', to: "battles#atkbtn4", as: "atkbtn4"
+
   get 'battles/:id/state', to: "battles#state", as: "state"
   get 'battles/:id/stats', to: "battles#stats", as: "stats"
   get 'battles/:id/allstats', to: "battles#allstats", as: "allstats"
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   patch 'players/:id/create_player', to: "players#create_player", as: "create_player"
   patch 'enemies/:id/create_enemy', to: "enemies#create_enemy", as: "create_enemy"
   # patch 'players/:id/attackassign', to: "players#attackassign", as: "attackassign"
+
 end

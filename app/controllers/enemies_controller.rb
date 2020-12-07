@@ -71,8 +71,6 @@ class EnemiesController < ApplicationController
 
     def create_enemy
       @enemy = Enemy.new(name: "#{Enemy.generate_name}", health: 100)
-      # self.name = enemy.generate_name
-      # self.health = 100
       @enemy.save
 
         4.times do |attack|
