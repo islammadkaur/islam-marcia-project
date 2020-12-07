@@ -5,6 +5,8 @@
   <li><a href="/enemies/new?">Create a new Enemy</a></li>
 </ul>
 
+<%= button_to "Generate Enemy", "/enemies/24/create_enemy", method: "patch"%>
+
 <% @enemies.each do |enemy| %>
 <br>
     <h4>Enemy: <%= link_to enemy.name, enemy_path(enemy)%></h4>
