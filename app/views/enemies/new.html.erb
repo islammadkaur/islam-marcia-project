@@ -1,5 +1,11 @@
+<body id="player_form">
 
-<h1>Enemy Creator</h1>
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/enemies">Go Back</a></li>
+</ul>
+
+<h2>Enemy Creator</h2>
 
 <%if @enemy.errors.any? %>
 <h4 style="color: #5DADE2">Errors</h4>
@@ -18,8 +24,6 @@
     <br>
     <br>
     <%= f.submit%>
-
     <% end %>
 
-    <br>
-    <%= link_to 'Go Back', enemies_path %><br>
+</body>

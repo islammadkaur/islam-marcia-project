@@ -1,4 +1,11 @@
-<h1>Player Creator</h1>
+<body id="player_form">
+
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/players">Go Back</a></li>
+</ul>
+
+<h2>Player Creator</h2>
 
 <%if @player.errors.any? %>
 <h4 style="color: #5DADE2">Errors</h4>
@@ -20,5 +27,5 @@
     <br>
     <% end %>
 
-    <br>
-    <%= link_to "Go Back", players_path %>
+</body>
+    

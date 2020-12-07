@@ -3,7 +3,6 @@ class Enemy < ApplicationRecord
     has_many :attacks, through: :enemy_attacks
     has_many :locations, through: :battles
     has_many :players, through: :battles
-    has_many :players, through: :battles
 
     validates :name, presence: true, uniqueness: true
 
@@ -32,20 +31,6 @@ class Enemy < ApplicationRecord
 
         name = "#{name_array.sample} the #{adj_array.sample}"
     end
-
-    # needs to be changed from a self method once we figure out where we want to generate a new enemy
-    def self.create_enemy
-        enemy = Enemy.new
-        enemy.name = generate_name
-        enemy.health = 100
-        enemy.attacks << Attack.all.sample(3)
-        # enemy.save
-
-        puts enemy.name
-        puts enemy.health
-        puts enemy.attacks
-    end
-
 
     
 

@@ -1,52 +1,57 @@
+<body id="battle_index">
 
-<body id="battles_index">
+<%# <audio controls autoplay loop>
+  <source src="/assets/bensound-scifi.mp3" type="audio/mpeg">
+</audio> %>
 
-<h1>Game Title</h1>
-<br>
-<br>
-<h2 style="color: #566573">Main Menu</h2>
+<audio src="/assets/bensound-scifi.mp3" autoplay></audio>
 
 <ul>
-    <li>
-        <h4 style="color: #5DADE2">Start a Battle 
+  <li><a href="/players/new?">Create Player</a></li>
+  <li><a href="/enemies/new?">Create Enemy</a></li>
+  <li><a href="/locations/new?">Create Location</a></li>
+  <li><a href="/attacks/new?">Create Attack</a></li>
+</ul>
+
+
+<h1>Neon Strikes</h1>
+<br>
+<h2>Main Menu</h2>
+
+<div>
+
+        <h4>Start a Battle 
         <%= button_to "New Battle", new_battle_path(@battle), method: "get"%>
         </h4>
          
-    </li>
-    <li>
+    
 
-        <h4 style="color: #5DADE2">New Player
-        <%= button_to "New Player", new_player_path, method: "get"%>
-        </h4>
-         
-    </li>
-    <li>
 
-        <h4 style="color: #5DADE2">Current Players
+        <h4>Current Players
         <%= button_to "Players", players_path, method: "get"%>
         </h4>
          
-    </li>
-    <li>
-        <h4 style="color: #5DADE2">Current Enemies
+    
+
+        <h4>Current Enemies
         <%= button_to "Enemies", enemies_path, method: "get"%>
         </h4>
          
-    </li>
-    <li>
-        <h4 style="color: #5DADE2">Current Locations
+    
+
+        <h4>Current Locations
         <%= button_to "Locations", locations_path, method: "get"%>
         </h4> 
-    </li>
-    <li>
-        <h4 style="color: #5DADE2">Current Attacks
+    
+
+        <h4>Current Attacks
         <%= button_to "Attacks", attacks_path, method: "get"%>
         </h4> 
-    </li>
-    <li>
-        <h4 style="color: #5DADE2">Stats
-            <%= button_to "Stats", "/battles/1/allstats", method: "get"%>
-        </h4> 
-    </li>
+    
 
-</ul>
+        <h4>Stats
+            <%= button_to "Stats", "/battles/24/allstats", method: "get"%>
+        </h4> 
+    
+
+</div>
