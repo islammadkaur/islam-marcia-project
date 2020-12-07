@@ -29,12 +29,12 @@ class Battle < ApplicationRecord
 
     
     # def prize
-def self.good_prize
-       good_prize_array = ["Ice Cream", "Pizza Party", "Vodka", "Pat On The Back", "Validation", "Pile Of Garbage", "Our Approval", "Half Eaten Sandwich"]
+def self.good_prizes
+       good_prize_array = ["Ice Cream", "A Pizza Party", "Vodka", "A Pat On The Back", "Our Validation", "A Pile Of Garbage", "Our Approval", "A Half Eaten Sandwich"]
        good_prize_array.sample
 end
-def self.bad_prize
-       bad_prize_array = ["Your Dignity", "Our Respect", "Your Friends", "Your Burrito", "Everything"]
+def self.bad_prizes
+       bad_prize_array = ["Your Dignity", "Our Respect", "Your Friends", "Your Burrito", "Your Glasses", "Everything"]
        bad_prize_array.sample
 end
 
