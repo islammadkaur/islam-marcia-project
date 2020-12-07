@@ -1,5 +1,11 @@
+<body id="player_form">
 
-<h1>Player Editor</h1>
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/players/">Go Back</a></li>
+</ul>
+
+<h2>Player Editor</h2>
 
 <%if @player.errors.any? %>
 <h4 style="color: #5DADE2">Errors</h4>
@@ -13,23 +19,25 @@
 <%= form_for(@player) do |f| %>
     <%= f.label :Name %>
     <br>
-
     <%= f.text_field :name %>
     <br>
+    <br>
+    <br>
         <%  @attack_slots.each do |player_attack| %>
-    <ul>
-        <li>
+    <div>
+        <p>
             <%= player_attack.name%>
             <br>
             Attack type: <%= player_attack.attack_type%>
             <br>
             Target: <%= player_attack.target%>
             <br>
-        </li>
-    </ul>
+            <br>
+        </p>
+    </div>
         <%end%>
+        <br>
+        <br>
     <%= f.submit%>
     <% end %>
-
-    <br>
-    <%= link_to "Go Back", players_path %>
+</body>

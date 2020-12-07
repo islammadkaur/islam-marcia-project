@@ -1,15 +1,17 @@
-<body class="player_index">
-
-<h1>Players</h1>
-<% @players.each do |player| %>
-
-    <h1> <%= link_to player.name, player_path(player)%></h1><br>
-
-<%end%>
-
-<%= button_to "Create a new Player", new_player_path(@player), method: "get"%>
-<br>
-<%= link_to "Back to Main Menu", battles_path %>
+<body id="player_index">
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/players/new?">Create a new Player</a></li>
+</ul>
 
 
+<%= button_to "Generate Player", "/players/24/create_player", method: "patch"%>
+  
+    <% @players.each do |player| %>
+    <br>
+        <h4 id = "list">Player:  <%= link_to player.name, player_path(player) %></h4>
+        <h4 id = "list">Health:  <%= player.health%></h4>
+    <br>
+    <%end%>
+  </div>
 </body>

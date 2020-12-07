@@ -69,6 +69,17 @@ class EnemiesController < ApplicationController
         @attack_slots
     end
 
+    def create_enemy
+      @enemy = Enemy.new(name: "#{Enemy.generate_name}", health: 100)
+      @enemy.save
+
+        4.times do |attack|
+          random_attack = Attack.all.sample
+          EnemyAttack.create(enemy_id: @enemy.id, attack_id: random_attack.id)
+        end
+      redirect_to enemy_path(@enemy)
+    end
+
 
 
       private

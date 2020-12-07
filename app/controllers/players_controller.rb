@@ -9,7 +9,6 @@ class PlayersController < ApplicationController
         @player = Player.find(params[:id])
         # @attack = @player.attack
         # current_attacks = @attack.name
-
         attacks
       end
 
@@ -31,6 +30,7 @@ class PlayersController < ApplicationController
           render :new
         end
       end
+
 
       def edit
         @player = Player.find(params[:id])
@@ -77,6 +77,18 @@ class PlayersController < ApplicationController
       player_attacks = @attack_slots
       allattacks = @player.attacks.player_attacks
       allattacks
+    end
+
+
+    def create_player
+      @player = Player.new(name: "#{Player.generate_name}", health: 100)
+      @player.save
+
+        4.times do |attack|
+          random_attack = Attack.all.sample
+          PlayerAttack.create(player_id: @player.id, attack_id: random_attack.id)
+        end
+      redirect_to player_path(@player)
     end
 
      

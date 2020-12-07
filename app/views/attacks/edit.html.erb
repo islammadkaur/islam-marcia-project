@@ -1,5 +1,11 @@
+<body id="player_form">
 
-<h1>Attack Editor</h1>
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/attacks/">Go Back</a></li>
+</ul>
+
+<h2>Attack Editor</h2>
 
 <%if @attack.errors.any? %>
 <h4 style="color: #5DADE2">Errors</h4>
@@ -31,8 +37,9 @@
     <%= f.text_field :target %>
     <br>
     <br>
+    <br>
+    <br>
     <%= f.submit%>
     <% end %>
 
-    <br>
-    <%= link_to "Go Back", attacks_path %>
+</body>

@@ -2,24 +2,94 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#battles_index {
-    background-image: url("main_bc.gif");
+//Battle_Index---------------------------------------------------------------------------------------------------
+#battle_index {
+
+    // background-image: linear-gradient(rgb(30, 4, 78), rgb(158, 45, 143), rgba(230, 219, 66, 0.315), url("main_bc.gif"));
+    // background: url("main_bc.gif"); https://i.redd.it/0bb6dqsiab451.gif  https://media.giphy.com/media/t74HSTS5I0F0Y/giphy.gif
+    background: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/9bc27292880429.5e569ff84e4d0.gif ");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
     text-align: center;
     width: auto;
     height: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
     
-#battles_index h1 {
-    color: white;
+#battle_index h1 {
+    color: rgb(255, 174, 0);
+    text-align: center;
+    border: 20px;
+    
+}
+
+#battle_index h2 {
+    color: #a8a8a8;
     text-align: center;
     border: 20px;
 }
 
+#battle_index h4 {
+    color: #ffffff;
+    text-align: center;
+    border: 20px;
+}
+
+#battle_index ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  //-Navigation Bar---------------------------
+#battle_index ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #171d6ed0;
+  }
+
+  #battle_index li {
+    float: left;
+  }
+
+  #battle_index li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #171d6ed0;
+  }
+  
+  #battle_index li a:hover {
+    background-color:  #0d1030;
+    color: #00fcfc;
+  }
+
+//-Button------------------------------------
+  #battle_index input {
+    border: none;
+    width: 170px;
+    height: 40px;
+    margin: 15px;
+    top: 350px;
+    background-color:rgb(34, 34, 34);
+    color: #566573;
+}
+
+#battle_index input:hover {
+    background-color: rgb(255, 0, 200);
+    color: rgb(122, 0, 96);
+}
+
+//Battle_New-----------------------------------------------------------------------------------------------------
 #battle_new {
-    background-image: url("main_bc.gif");
+    background: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/9bc27292880429.5e569ff84e4d0.gif ");
     text-align: center;
     width: auto;
     height: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 #battle_new h1 {
@@ -30,13 +100,12 @@
 #battle_new label {
     color: white;
     font-size: 20px;
-    // float: left;
     position: relative;
     padding: 15px;
     top: 350px;
 }
 select#battle_player_id {
-    // float: left;
+    border: none;
     width: 200px;
     height: 40px;
     font-size: 16px;
@@ -44,11 +113,11 @@ select#battle_player_id {
     position: relative;
     top: 350px;
     background-color: rgb(34, 34, 34);
-    color: white;
+    color: rgb(189, 189, 189);
 
 }
 select#battle_location_id {
-    // float: left;
+    border: none;
     width: 200px;
     height: 40px;
     font-size: 16px;
@@ -56,12 +125,12 @@ select#battle_location_id {
     position: relative;
     top: 350px;
     background-color: rgb(34, 34, 34);
-    color: white;
+    color: rgb(189, 189, 189);
 
 
 }
 select#battle_enemy_id {
-    // float: left;
+    border: none;
     width: 200px;
     height: 40px;
     font-size: 16px;
@@ -69,28 +138,45 @@ select#battle_enemy_id {
     position: relative;
     top: 350px;
     background-color: rgb(34, 34, 34);
-    color: white;
+    color: rgb(189, 189, 189);
 
+}
+//-Button------------------------------------
+#battle_new input {
+    border: none;
+    border-radius: 2px;
+    width: 170px;
+    height: 40px;
+    margin: 15px;
+    top: 350px;
+    background-color: rgb(0, 0, 0);
+    color: #566573;
 }
 
 #battle_new input {
+    border: none;
+    border-radius: 2px;
     width: 120px;
     height: 40px;
     position: relative;
     margin: 15px;
     top: 350px;
-    background-color: rgb(110, 33, 33);
-    color: white;
+    background-color: rgb(34, 34, 34);
+    color: #ffffff;
 
 }
 
+#battle_new input:hover {
+    background-color: rgb(255, 0, 200);
+    color: rgb(139, 3, 110);
+}
+//Battle_Page----------------------------------------------------------------------------------------------------
 #battle_page_player {
     float: left;
     width: 50%;
     height: 500px;
     position: relative;
     margin-top: 11%;
-
 }
 #battle_page_enemy {
     float: left;
@@ -98,8 +184,6 @@ select#battle_enemy_id {
     height: 100px;
     position: relative;
     margin-top: 11%;
-
-
 }
 
 img {
@@ -173,6 +257,7 @@ img#ice_cream {
 }
 
 #battle_show input {
+    font-family: "Lucida Console", "Courier New", monospace;
     background-color: rgb(42, 5, 109);
     color: white;
     font-size: 20px;
@@ -240,6 +325,7 @@ img#ice_cream {
 // }
 
 #battle_show {
+    font-family: "Lucida Console", "Courier New", monospace;
     background-repeat: no-repeat;
     background-image: url("/assets/fight_bg.gif");
 background-size: 100%;
@@ -276,6 +362,7 @@ h3 {
     text-decoration: underline;
 }
 
+
 #battle_stat {
     background-repeat: no-repeat;
     background-image: url("/assets/stat_bg4.gif");
@@ -309,11 +396,5 @@ h3 {
     margin-top: 0%;
     position: absolute;
 }
-
-
-
-
-
-
 
 
