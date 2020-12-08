@@ -227,10 +227,12 @@ class BattlesController < ApplicationController
 
   def stats
     @battle = Battle.find(params[:id])
+ 
   end
 
   def allstats
     @battles = Battle.all
+ 
   end
 
   def p_attacks
@@ -243,8 +245,8 @@ class BattlesController < ApplicationController
           if attack.id === player_attack.attack_id
             @p_attack_slots << attack
           end
-        end
-    end
+        end 
+    end 
     @p_attack_slots
   end
 
@@ -268,6 +270,7 @@ class BattlesController < ApplicationController
     if @battle.destroy
       redirect_to battles_path
     end
+
   end
 
 

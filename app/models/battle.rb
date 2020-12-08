@@ -5,7 +5,6 @@ class Battle < ApplicationRecord
 
 
 
-
 def self.good_prizes
        good_prize_array = ["Ice Cream", "A Pizza Party", "Vodka", "A Pat On The Back", "Our Validation", "A Pile Of Garbage", "Our Approval", "A Half Eaten Sandwich"]
        good_prize_array.sample

@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_033816) do
+ActiveRecord::Schema.define(version: 2020_12_04_175553) do
 
   create_table "attacks", force: :cascade do |t|
     t.string "name"
-    t.string "damage"
+    t.integer "damage"
     t.string "attack_type"
     t.string "target"
     t.datetime "created_at", precision: 6, null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_033816) do
     t.integer "player_id"
     t.integer "enemy_id"
     t.integer "location_id"
+    t.integer "attack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_033816) do
   create_table "enemies", force: :cascade do |t|
     t.string "name"
     t.integer "health"
+    t.integer "attack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_033816) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.integer "health"
+    t.integer "attack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

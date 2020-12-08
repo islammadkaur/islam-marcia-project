@@ -53,8 +53,9 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    @category = Category.create(name: 'My Category')
-    @post = @category.posts.create(title: 'My Post', description: 'My post desc')
+    @battle = Battle.create(player_id: 1, enemy_id: 1, location_id: 1)
+    @player = Player.create(name: 'Player', health: 100)
+    @enemy = Enemy.create(name: 'Enemy', health: 100)
   end
 
   config.after(:each) do
