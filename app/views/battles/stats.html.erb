@@ -1,10 +1,17 @@
 <body id="battle_stat">
+
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+  <li><a href="/battles/1/allstats">Go Back</a></li>
+</ul>
+
 <%# <img id ="stat_bg" src="/assets/stat_bg4.gif"> %>
 <div id="battle_stat_info">
 <div id="stat_text">
 <h1 id="stats_underline">Stats</h1><br>
 <h1><%= "Player Name: #{@battle.player.name}"%></h1>
 <h1><%= "Opponent: #{@battle.enemy.name}"%></h1>
+<br>
 <h1><%= "Won/Lost: #{@battle.state.capitalize}"%></h1>
 <h1><%= "You #{@battle.state.capitalize}: #{@battle.prize}"%></h1>
 </div>

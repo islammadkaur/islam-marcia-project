@@ -25,20 +25,16 @@
         <%= button_to "New Battle", new_battle_path(@battle), method: "get"%>
         </h4>
          
-    
-
 
         <h4>Current Players
         <%= button_to "Players", players_path, method: "get"%>
         </h4>
          
-    
 
         <h4>Current Enemies
         <%= button_to "Enemies", enemies_path, method: "get"%>
         </h4>
          
-    
 
         <h4>Current Locations
         <%= button_to "Locations", locations_path, method: "get"%>
@@ -48,6 +44,10 @@
         <h4>Current Attacks
         <%= button_to "Attacks", attacks_path, method: "get"%>
         </h4> 
+
+        <h4>Stats
+        <%= button_to "Stats", "/battles/1/allstats", method: "get"%>
+        </h4>
 
     
 
