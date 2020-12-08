@@ -19,10 +19,24 @@
     
 
 #battle_index h1 {
-    color: rgb(255, 174, 0);
+    color: rgb(235, 36, 192);
+    width: 20%;
+    height: 40px;
     text-align: center;
     border: 20px;
-    
+    background-color: rgba(255, 255, 255, 0.616);
+    margin-left: 40%; 
+    text-shadow: 2px 2px #0d1030;  
+}
+#battle_index h1:hover {
+    color: rgba(243, 243, 243, 0.863);
+    width: 20%;
+    text-align: center;
+    border: 20px;
+    background-color: rgba(255, 17, 164, 0.616);
+    margin-left: 40%;   
+    text-shadow: 2px 2px #160114;  
+
 }
 
 #battle_index h2 {
