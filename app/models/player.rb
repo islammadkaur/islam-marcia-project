@@ -32,21 +32,6 @@ class Player < ApplicationRecord
         name = "#{name_array.sample} the #{adj_array.sample}"
     end
 
-    # needs to be changed from a self method once we figure out where we want to generate a new enemy
-
-
-
-    # def attackname
-    #     player_attacks = []
-    #     find_player = Player.all.find do |player|
-    #         player == self
-    #     end
-    #     get_attacks = Attack.all.map do |attack|
-    #         attack.name
-    #     end
-    #     player_attacks << get_attacks.sample(3)
-    #     player_attacks
-    # end
     
 
 

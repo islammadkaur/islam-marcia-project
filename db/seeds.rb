@@ -1,22 +1,5 @@
 #------------------------------------------------------------------------------------------------------------------------------>
 
-# PLAYERS
-core = Player.create(name: "Core Philosophies", health: 100)
-ambush = Player.create(name: "Ambush", health: 100)
-candle = Player.create(name: "Babylon Candle", health: 100)
-belladonna = Player.create(name: "Belladonna", health: 100)
-jane = Player.create(name: "Calamity Jane", health: 100)
-chromium = Player.create(name: "Chromium", health: 100)
-#------------------------------------------------------------------------------------------------------------------------------>
-
-# ENEMIES
-chris = Enemy.create(name: "Chris P. Bacon", health: 100)
-dr_fart = Enemy.create(name: "Dr. Faartz", health: 100)
-kash = Enemy.create(name: "Kash Register", health: 100)
-jack_daniels = Enemy.create(name: "Jack Daniels", health: 100)
-kim = Enemy.create(name: "Kim Kashkashian", health: 100)
-brock_lee = Enemy.create(name: "Brock Lee", health: 100)
-
 #------------------------------------------------------------------------------------------------------------------------------>
 #Types = Physical, Emotional, Spiritual, Financial, Verba
 

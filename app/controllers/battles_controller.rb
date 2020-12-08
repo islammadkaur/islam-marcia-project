@@ -2,14 +2,13 @@ class BattlesController < ApplicationController
   # before_action :refresh 
   def index
     @battles = Battle.all
-    
   end
 
   def show
     @battle = Battle.find(params[:id])
     battle_start
-    # p_attacks
-    # e_attacks
+    p_attacks
+    e_attacks
     atkmethod1
     atkmethod2
     atkmethod3
@@ -54,6 +53,7 @@ class BattlesController < ApplicationController
   end
 
   def atkmethod1
+    @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
     @player_attack1 = @p_attack_slots[0]
@@ -84,6 +84,7 @@ class BattlesController < ApplicationController
   end
 
   def atkmethod2
+    @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
     @player_attack2 = @p_attack_slots[1]
@@ -115,6 +116,7 @@ class BattlesController < ApplicationController
   end
 
   def atkmethod3
+    @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
     @player_attack3 = @p_attack_slots[2]
@@ -145,6 +147,7 @@ class BattlesController < ApplicationController
   end
 
   def atkmethod4
+    @battle = Battle.find(params[:id])
     p_attacks
     e_attacks
     @player_attack4 = @p_attack_slots[3]
@@ -227,12 +230,6 @@ class BattlesController < ApplicationController
 
   def prize
     @battle = Battle.find(params[:id])
-
-      if @battle.state == "WON"
-        @battle.update(prize: Battle.good_prize)
-      elsif @battle.state == "LOST"
-        @battle.update(prize: Battle.bad_prize)
-      end
     redirect_to stats_path(@battle)
   end
 
@@ -251,12 +248,13 @@ class BattlesController < ApplicationController
 
   def stats
     @battle = Battle.find(params[:id])
+ 
   end
 
   def allstats
     @battles = Battle.all
+ 
   end
-
 
   def p_attacks
     @battle = Battle.find(params[:id])
@@ -268,14 +266,8 @@ class BattlesController < ApplicationController
           if attack.id === player_attack.attack_id 
             @p_attack_slots << attack
           end
-
-      Attack.all.select do |attack|
-        @player_attacks.select do |player_attack|
-            if attack.id === player_attack.attack_id 
-              @p_attack_slots << attack
-            end
         end 
-      end 
+    end 
     @p_attack_slots
   end
 
@@ -289,13 +281,8 @@ class BattlesController < ApplicationController
           if attack.id === enemy_attack.attack_id 
             @e_attack_slots << attack
           end
-      Attack.all.select do |attack|
-        @enemy_attacks.select do |enemy_attack|
-            if attack.id === enemy_attack.attack_id 
-              @e_attack_slots << attack
-            end
         end 
-      end 
+    end 
     @e_attack_slots
   end
 
@@ -304,6 +291,7 @@ class BattlesController < ApplicationController
     if @battle.destroy
       redirect_to battles_path
     end
+
   end
 
   private
