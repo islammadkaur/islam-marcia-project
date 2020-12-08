@@ -17,6 +17,7 @@
     font-family: "Lucida Console", "Courier New", monospace;
 }
     
+
 #battle_index h1 {
     color: rgb(235, 36, 192);
     width: 20%;
@@ -155,6 +156,31 @@ select#battle_enemy_id {
     color: rgb(189, 189, 189);
 
 }
+//-Navigation Bar---------------------------
+#battle_new ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #171d6ed0;
+  }
+
+  #battle_new li {
+    float: left;
+  }
+
+  #battle_new li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #171d6ed0;
+  }
+  
+  #battle_new li a:hover {
+    background-color:  #0d1030;
+    color: #00fcfc;
+  }
 //-Button------------------------------------
 #battle_new input {
     border: none;
@@ -230,10 +256,16 @@ img#fire {
 #winner h1 {
     color: white;
     text-align: center;
+    
 }
 
 #winner {
     background-color: #1b1b1b;
+    background-image: url("/assets/fight_bg.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 img#ice_cream {
@@ -269,7 +301,7 @@ img#ice_cream {
     text-align: center;
     // position: relative;
 }
-
+ //-Battle Show---------------------------------------------------------------------------------------
 #battle_show input {
     font-family: "Lucida Console", "Courier New", monospace;
     background-color: rgb(42, 5, 109);
@@ -340,9 +372,12 @@ img#ice_cream {
 
 #battle_show {
     font-family: "Lucida Console", "Courier New", monospace;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url("/assets/fight_bg.gif");
-background-size: 100%;
+    // background-size: 100%;
+    background-color: black;
 }
 
 #player_health {
@@ -376,13 +411,43 @@ h3 {
     text-decoration: underline;
 }
 
+ //-Battle Stat----------------------------------------------------------------------------------------
 
 #battle_stat {
     background-repeat: no-repeat;
     background-image: url("/assets/stat_bg4.gif");
     background-size: 100%;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: black;
+
 }
 
+ //-Navigation Bar---------------------------
+ #battle_stat ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #171d6ed0;
+  }
+
+  #battle_stat li {
+    float: left;
+  }
+
+  #battle_stat li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #171d6ed0;
+  }
+  
+  #battle_stat li a:hover {
+    background-color:  #0d1030;
+    color: #00fcfc;
+  }
+// ----------------------------------------------------
 #battle_stat_info {
     // color: rgb(0, 0, 0);
     text-align: center;

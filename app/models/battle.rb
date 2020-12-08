@@ -14,8 +14,6 @@ def self.bad_prizes
        bad_prize_array.sample
 end
 
- 
-
 
 
     def random

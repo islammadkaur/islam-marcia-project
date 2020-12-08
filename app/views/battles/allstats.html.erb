@@ -1,3 +1,13 @@
+<body id="player_index">
+<ul>
+  <li><a href="/battles">Main Menu</a></li>
+</ul>
+
+<h2>Battle Stats</h2>
 <%@battles.each do |battle|%>
-<%= link_to battle.player.name, stats_path(battle)%>
+<br>
+<h4><%= link_to battle.player.name, stats_path(battle)%></h4>
+<br>
 <%end%>
+
+</body>

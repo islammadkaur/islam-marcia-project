@@ -15,7 +15,7 @@
 <%if @battle.state == "LOST"%>
     <img id ="fire" src="https://cdn.lowgif.com/full/f7cc36fd020089d6-fire-gif-clipart-best.gif" >
     <img id ="lost" src="https://img.pngio.com/transparent-lisa-simpson-gif-sticker-gif-gfycat-simpsons-transparent-498_682.gif" >
-    <%= button_to "#{@battle.prize}", lost_path(@battle), method: "patch"%>
+    <%= button_to "You Lost #{@battle.prize}", lost_path(@battle), method: "patch"%>
 <%end%>
 
 

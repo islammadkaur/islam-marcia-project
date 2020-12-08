@@ -31,7 +31,4 @@ class Enemy < ApplicationRecord
 
         name = "#{name_array.sample} the #{adj_array.sample}"
     end
-
-    
-
 end
